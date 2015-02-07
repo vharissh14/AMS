@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+					    <ul>
+							<li>Masters
+								<ul>
+									<li><a href="ListAllRules.html">View Rules</a></li>
+									<li><a href="Add Rules.html">Add Rules</a></li>
+								</ul>
+							</li>
+						</ul>
+
+                    </div>
+
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> RULE</a> <a href="#"> Manage Rules</a> View Rules</p>
+                        <h1>List All Rules</h1>
+                    	<p>
+                        	This page is for users to see all the Rules.
+                      </p>
+                        <form id="form1" name="form1" method="post" action="">
+                            <div class="tabcontent">
+                            <table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Rule Name:</th>
+										<td><input type="text" name="textfield"  id="textfield" Value = "FREE REFILLS"/></td>
+                                    	<th class="column1" width="150px">Rule Type:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Scheme</option>
+                                          <option>Expiry</option>
+                                          <option>Membership</option>
+                                         </select></td>
+
+                                  </tr>
+                                	<tr class="odd">
+                                    	<th class="column1">Rule Start Date:</th>
+                                    <td><input type="text" name="fdate"  id="fdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate')" style="cursor:pointer" /></td>
+                                        <th class="column1" width="150px">Rule End Date:</th>
+                                      <td><input type="text" name="tdate" id="tdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('tdate')" style="cursor:pointer" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                   	     <input name="CreateNew" class="primarybuttons" type="button" onclick="document.getElementById('searchdetails').style.display='';" value="Search" />
+                        </div>
+                        <table class="dataTable" >
+
+								<table  class="dataTable" id="searchdetails" style="display:none;">
+                                <thead>
+                                    <tr class="odd">
+                                        <th class="column1">Rule ID</th>
+                                        <th>Rule Name</th>
+                                        <th>Rule Description</th>
+                                        <th>Rule Start Date</th>
+                                        <th>Rule End Date</th>
+                                        <th>Rule Type</th>
+										<th class="column1"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>RULE112</td>
+                                        <td>FREE REFILLS</td>
+                                        <td>Free Refills rule parameter setup</td>
+                                        <td>15/01/2010</td>
+                                        <td>14/06/2011</td>
+                                        <td>Scheme</td>
+                                        <td class="column1"><a href="RuleDetails.html">Details</a></td>
+                                    </tr>
+                                     <tr class="odd">
+                                        <td>RULE113</td>
+                                        <td>Petrol</td>
+                                        <td>Convert Points to Buy Petrol</td>
+                                        <td>01/06/2011</td>
+                                        <td>31/05/2013</td>
+                                        <td>Expiry</td>
+										<td class="column1"><a href="RuleDetails.html">Details</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>RULE114</td>
+                                        <td>Books</td>
+                                        <td>Convert Points into purchase books</td>
+                                        <td>01/08/2011</td>
+                                        <td>30/08/2012</td>
+                                        <td>Process</td>
+										<td class="column1"><a href="RuleDetails.html">Details</a></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="8" align="right"><span class="pagination">Page: <a href="#" class="selected">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">Next</a></span></td>
+                                    </tr>
+                                    <tfoot>
+
+                                    </tfoot>
+                                </tbody>
+                            </table>
+                         </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--lã \#ã R|y`Û \îílWE∆ÔÏæ˜CX=32Âœ;a∑)é˛z»±}å†ıt6,ÄwÓMèvñ)®EôˆkåWû¸Ï gø‰i≥ê¥é$\S1ı*vMpßcR<π`∫nè qÀPÑÆÂ )ﬂΩÜÛ`πÈ¡ç4Œ>Zù˝ÓVV2Ænøøu¨2° ≥bËè0ÿBï“ùªõπ∂rT≠«º~éÊÿæÓêê#V^L¬ÿ<ÈõX,hô¬‚ìÆ…ºnoô Ä‡¨˜¯çn≠ã·≤•(≥ë·˘:!d,è“i4›‚1â)–o∑ø:á_[¬$≈P£íÃ€_Ùı!Ü_2™?5ñài/◊»≠ûÒ¥¢2âf0ÇÑj¸§è r0@Ê(Œ˙
+ºTjµnâ8s_Óπ—qØäÒAΩ[G÷]ZXï	ÿÌ0Êæ÷Ÿ√b˙¥hqµîÌo„¢ë∆á˝Å	6F\´æ”* Fë¢Áz∆HÊ˛=ø€¯ô'–™í,A{{⁄rßD^v‡¡¶{SÓÍ6ÙÊdL◊›†<ƒ∞¨@ìﬂÈäà-
+™Bep	ß˜¨Ú.äÒ7äMŸÁÌî≠ôÉìd ßtX7ø∫ﬁ|– ÍàR)ì¯ÍàÍàÍàßUN£1tPÀà Íà-->

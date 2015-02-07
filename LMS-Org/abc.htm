@@ -1,0 +1,625 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>
+	
+       
+    
+</title><style type="text/css">
+	.ctl00_ctl00_MnuMainMenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_ctl00_MnuMainMenu_1 { color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;text-decoration:none; }
+	.ctl00_ctl00_MnuMainMenu_2 { color:Black;background-color:#82A4C7;font-family:Trebuchet MS;font-size:11px;font-weight:bold; }
+	.ctl00_ctl00_MnuMainMenu_3 {  }
+	.ctl00_ctl00_MnuMainMenu_4 { width:80px;padding:0px 5px 0px 5px; }
+	.ctl00_ctl00_MnuMainMenu_5 { padding:5px 5px 5px 5px; }
+	.ctl00_ctl00_MnuMainMenu_6 { color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:normal; }
+	.ctl00_ctl00_MnuMainMenu_7 { background-color:#A1C3DF;border-color:WhiteSmoke;border-width:1px;border-style:Solid;width:180px;padding:0px 5px 0px 5px; }
+	.ctl00_ctl00_MnuMainMenu_8 { padding:0px 5px 0px 5px; }
+	.ctl00_ctl00_MnuMainMenu_9 { color:Gray; }
+	.ctl00_ctl00_MnuMainMenu_10 {  }
+	.ctl00_ctl00_MnuMainMenu_11 {  }
+	.ctl00_ctl00_MnuMainMenu_12 { padding:0px 5px 0px 5px; }
+	.ctl00_ctl00_MnuMainMenu_13 { color:Black;font-weight:bold; }
+	.ctl00_ctl00_MnuMainMenu_14 { color:Black;background-color:#82A4C7;border-color:WhiteSmoke;border-width:1px;border-style:Solid;font-weight:bold; }
+
+</style></head>
+<script language="javascript" type="text/javascript">
+
+function CheckControls(appUrl,SSOToken)
+{ 	
+	var localURL= window.location.href;
+	var a1 = new Array();
+    a1=localURL.split("/");	   
+    //alert(a1[2].toString().toUpperCase()); 					
+	if(a1[2].toString().toUpperCase()== SSOToken)
+	//if(SSOToken== SSOToken)
+	{							  
+	  window.close();					    
+	}	
+	else
+	{
+	 window.location.href="../Login.aspx"
+	}					
+}
+</script>
+
+
+<script language="javascript" src='../Scripts/FBRS.js'
+    type="text/javascript">
+</script>
+
+<body style="margin-left: 0; margin-top: 0; margin-bottom:0; margin-right:0">
+    <form name="aspnetForm" method="post" action="ForecastReports.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTM2NzY3MjQxMw9kFgJmD2QWAmYPZBYCAgEPZBYCAgEPZBYCZg9kFgJmD2QWBAICD2QWAmYPZBYCAgEPZBYCZg8PFgIeBFRleHQFHFdlbGNvbWUgcmFtYW5hbi52ZW5rYXRhIChQTSlkZAIED2QWBgIBD2QWBAIBDxYCHgdWaXNpYmxlaBYCAgEPZBYCZg9kFgJmD2QWAgIBDxBkEBUAFQAUKwMAFgBkAgMPFgIfAWcWAgIBD2QWAmYPZBYCZg9kFgICAQ8QZBAVASRObyBSZXBvcnRzIGF2YWlsYWJsZSBmb3IgdGhlIHByb2plY3QVASRObyBSZXBvcnRzIGF2YWlsYWJsZSBmb3IgdGhlIHByb2plY3QUKwMBZxYAZAIFDxYCHwFnFgICAQ9kFgRmD2QWBgIBD2QWAmYPDxYCHwAFBTU4NDY4ZGQCAw9kFgJmDw8WAh8ABQsxOC1BcHItMjAxMWRkAgQPZBYCAgIPDxYCHwAFHlBUIEJpbmFyYSBHdW5hIE1lZGlrdGFtYShSU1BJKWRkAgEPZBYGAgEPZBYCZg8PFgIfAAUMVVNEIDI4NDQwLjAwZGQCAw9kFgJmDw8WAh8ABQszMS1BdWctMjAxMWRkAgQPZBYEAgEPDxYCHwAFFlJTUEkgSFJNUyBDb25zdWx0aW5nIDFkZAIEDw8WAh8ABQFZZGQCBw9kFgICAw8WAh8BZxYCAgEPZBYEZg9kFgJmD2QWAmYPZBYCZg9kFgJmD2QWAmYPZBYCZg9kFgRmD2QWBGYPZBYCZg8PFgIfAAURQXZhaWxhYmxlIFBlcmlvZHNkZAICD2QWAmYPDxYCHwAFEFNlbGVjdGVkIFBlcmlvZHNkZAIBD2QWBmYPZBYCZg8QZBAVABUAFCsDAGRkAgEPZBYIZg8PFgIeB0VuYWJsZWRoZGQCAg8PFgIfAmhkZAIEDw8WAh8CaGRkAgYPDxYCHwJoZGQCAg9kFgJmDxBkEBUAFQAUKwMAZGQCAQ9kFgICAQ9kFgRmDw9kFgIeDU9uQ2xpZW50Q2xpY2sFfnJldHVybiBQb3B1cFJlcG9ydChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY3RsMDBfY3RsMDBfY3BsaExldmVsT25lX2NwbGhMZXZlbFR3b19JdGVtU2VsZWN0b3JfbHN0UmlnaHQnKSwgJ1NlbGVjdGVkIFBlcmlvZHMnKWQCAg8PZBYCHwMFfnJldHVybiBQb3B1cFJlcG9ydChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnY3RsMDBfY3RsMDBfY3BsaExldmVsT25lX2NwbGhMZXZlbFR3b19JdGVtU2VsZWN0b3JfbHN0UmlnaHQnKSwgJ1NlbGVjdGVkIFBlcmlvZHMnKWQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFOmN0bDAwJGN0bDAwJGNwbGhMZXZlbE9uZSRjcGxoTGV2ZWxUd28kSXRlbVNlbGVjdG9yJGxzdExlZnQFO2N0bDAwJGN0bDAwJGNwbGhMZXZlbE9uZSRjcGxoTGV2ZWxUd28kSXRlbVNlbGVjdG9yJGxzdFJpZ2h0BCbwyYi8wA24PxG7TyIINd4o8Ro=" />
+</div>
+
+<script type="text/javascript">
+<!--
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</script>
+
+
+<script src="/WebResource.axd?d=hErNDHWW2OuJdcnzUuYV2g2&amp;t=633390169780551566" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=QLW4iKm106FIRg-ZFyWT-A2&amp;t=633390169780551566" type="text/javascript"></script>
+<script src="/WebResource.axd?d=NAZEKomCIwYnfzid3-8nCP02p5GxSWm8oh19wQHvKg81&amp;t=633390169780551566" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+// -->
+</script>
+
+        <div>
+            <table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+	<tr>
+		<td valign="middle"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+			<tr style="font-family:Trebuchet MS;">
+				<td align="left" valign="middle"><img id="ctl00_ctl00_imgLogo" src="../Images/logo.jpg" alt="Fixed Bid Revenue Recognition System" align="middle" style="border-width:0px;" /></td>
+			</tr>
+		</table><table id="ctl00_ctl00_Table1" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+			<tr style="font-family:Trebuchet MS;">
+				<td align="left" valign="middle">
+                                    <marquee behavior ="scroll" direction ="left" color ="blue" onmouseover="this.stop();" onmouseout="this.start();"><B style="COLOR: blue;font-size:small;">Every 2nd &amp; 4th Sunday schedule for 
+                                        maintenance between 11.00 AM to 3.00 PM (IST) </B>
+                                     </marquee>
+                                     
+
+                                </td>
+			</tr>
+		</table><table cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+			<tr style="color:Black;background-color:#82A4C7;font-family:Trebuchet MS;font-size:11px;">
+				<td><a href="#ctl00_ctl00_MnuMainMenu_SkipLink"><img alt="Skip Navigation Links" src="/WebResource.axd?d=icaYRnf72CODnsu59oEeCw2&amp;t=633390169780551566" width="0" height="0" style="border-width:0px;" /></a><table id="ctl00_ctl00_MnuMainMenu" class="ctl00_ctl00_MnuMainMenu_5 ctl00_ctl00_MnuMainMenu_2" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun0"><table class="ctl00_ctl00_MnuMainMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td style="white-space:nowrap;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_3" href="Home.aspx">Home</a></td>
+							</tr>
+						</table></td><td style="width:3px;"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun1"><table class="ctl00_ctl00_MnuMainMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td style="white-space:nowrap;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_3" href="#" style="cursor:text;">Projects</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Projects" style="border-style:none;vertical-align:middle;" /></td>
+							</tr>
+						</table></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun2"><table class="ctl00_ctl00_MnuMainMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td style="white-space:nowrap;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_3" href="#" style="cursor:text;">Effort</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Effort" style="border-style:none;vertical-align:middle;" /></td>
+							</tr>
+						</table></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun3"><table class="ctl00_ctl00_MnuMainMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td style="white-space:nowrap;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_3" href="#" style="cursor:text;">Reports</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Reports" style="border-style:none;vertical-align:middle;" /></td>
+							</tr>
+						</table></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun4"><table class="ctl00_ctl00_MnuMainMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td style="white-space:nowrap;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_3" href="#" style="cursor:text;">Administration</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Administration" style="border-style:none;vertical-align:middle;" /></td>
+							</tr>
+						</table></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun5"><table class="ctl00_ctl00_MnuMainMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+							<tr>
+								<td style="white-space:nowrap;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_3" href="javascript:__doPostBack('ctl00$ctl00$MnuMainMenu','')"></a></td>
+							</tr>
+						</table></td>
+					</tr>
+				</table><div id="ctl00_ctl00_MnuMainMenun1Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun6">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="Project.aspx">Project List</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun7">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="SetCurrencyCode.aspx">Project Currency / Billing Type</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun8">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="Contract.aspx">Contract</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun9">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="milestone.aspx">Milestone</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun10">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="invoice.aspx">Invoice</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun1ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun1ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun2Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun11">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="#" style="cursor:text;">Effort Estimation</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Effort Estimation" style="border-style:none;vertical-align:middle;" /></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun12">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="#" style="cursor:text;">Pricing Effort Estimation</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Pricing Effort Estimation" style="border-style:none;vertical-align:middle;" /></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun13">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="#" style="cursor:text;">Actual Effort </a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Actual Effort " style="border-style:none;vertical-align:middle;" /></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun2ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun2ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun11Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun14">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="CreateEffortEstimation.aspx">Create</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun15">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ViewEffortEstimation.aspx">View</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun11ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun11ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun12Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun16">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="CreatePricingEffortEstimation.aspx">Create</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun17">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ViewPricingEffortEstimation.aspx">View</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun12ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun12ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun13Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun18">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ActualEffortEstimation.aspx">Effort for a project</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun19">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportsGenerate.aspx?actual=true">Effort for all projects</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun13ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun13ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun3Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun20">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportsGenerate.aspx">Generate Revenue</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun21">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="FailedReportReason.aspx">Revenue Generation Errors</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun22">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="#" style="cursor:text;">View Reports</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand View Reports" style="border-style:none;vertical-align:middle;" /></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun23">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="#" style="cursor:text;">Finance Reports</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Finance Reports" style="border-style:none;vertical-align:middle;" /></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun24">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="#" style="cursor:text;">Milestone Reports</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Milestone Reports" style="border-style:none;vertical-align:middle;" /></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun25">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ForecastReports.aspx">Forecast Reports</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun3ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun3ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun22Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun26">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportbyPeriod.aspx">Summary by Period</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun27">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportByProject.aspx">Summary by Project</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun22ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun22ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun23Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun28">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportContractPendingApproval.aspx">Contract History / Approval</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun29">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportMilestonePendingApproval.aspx">Milestone History / Approval</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun30">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportEffrtEstPendingApproval.aspx">Effort Est History / Approval</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun31">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportActConEstData.aspx">Actuals /Contract /Effrt Est Report</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun23ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun23ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun24Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun32">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportMilestoneOverdue.aspx">Milestone Overdue </a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun33">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportBillingVariance.aspx">Milestone Billing Variance</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun34">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportIRFOverdue.aspx">IRF OverDue Report</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun35">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ReportIRFBillingVariance.aspx">IRF Billing Variance</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun24ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun24ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun4Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun36">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="LocationGroup.aspx">Location Management</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun37">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="#" style="cursor:text;">Closed Projects</a></td><td style="width:0;"><img src="/WebResource.axd?d=SVKw03hFHiRs12pqWM1jnItLCWBnk8dYearMo3p6psM1&amp;t=633390169780551566" alt="Expand Closed Projects" style="border-style:none;vertical-align:middle;" /></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun38">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="Expense.aspx">Expense Management</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun39">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="UserManagement.aspx">User Management</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun40">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="SetExchangeRate.aspx">Set Exchange Rate</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun41">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="SetRealizationRate.aspx">Set Realization Rate</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun4ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun4ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><div id="ctl00_ctl00_MnuMainMenun37Items" class="ctl00_ctl00_MnuMainMenu_0 ctl00_ctl00_MnuMainMenu_8">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun42">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="ContractClosed.aspx">Contract</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun43">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="MilestoneClosed.aspx">Milestone</a></td>
+								</tr>
+							</table></td>
+						</tr><tr onmouseover="Menu_HoverDynamic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_ctl00_MnuMainMenun44">
+							<td><table class="ctl00_ctl00_MnuMainMenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+								<tr>
+									<td style="white-space:nowrap;width:100%;"><a class="ctl00_ctl00_MnuMainMenu_1 ctl00_ctl00_MnuMainMenu_6" href="InvoiceClosed.aspx">Invoice</a></td>
+								</tr>
+							</table></td>
+						</tr>
+					</table><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun37ItemsUp" onmouseover="PopOut_Up(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=RG1Evcz7QpD31a_jOIBe85eimcpZ2M4vVL6HOZn_zBY1&amp;t=633390169780551566" alt="Scroll up" />
+					</div><div class="ctl00_ctl00_MnuMainMenu_7 ctl00_ctl00_MnuMainMenu_0" id="ctl00_ctl00_MnuMainMenun37ItemsDn" onmouseover="PopOut_Down(this)" onmouseout="PopOut_Stop(this)" style="text-align:center;">
+						<img src="/WebResource.axd?d=oMq6TxyvHl641V2BCZu4d3S0KLtbsGBabOzc_GNp7Wo1&amp;t=633390169780551566" alt="Scroll down" />
+					</div>
+				</div><a id="ctl00_ctl00_MnuMainMenu_SkipLink"></a></td><td align="right"><span id="ctl00_ctl00_lblUserName" style="color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;">Welcome ramanan.venkata (PM)</span></td><td align="center"><a id="ctl00_ctl00_linkLogOut" href="javascript:__doPostBack('ctl00$ctl00$linkLogOut','')" style="color:Blue;font-family:Trebuchet MS;font-size:11px;font-weight:bold;text-decoration:none;">Logout</a></td>
+			</tr>
+		</table>
+    
+    
+    <div id="ctl00_ctl00_cplhLevelOne_cplhLevelTwoMessage_divSuccessMessage">
+        <table border="0" style="width:100%;">
+			<tr valign="middle">
+				<td>
+                     <br />
+                   <ul id="ctl00_ctl00_cplhLevelOne_cplhLevelTwoMessage_blstSuccessMessage" style="color:Green;font-family:Trebuchet MS;font-size:10pt;font-weight:bold;">
+					<li>No Reports available for the project</li>
+				</ul></td>
+			</tr>
+		</table>
+    </div>
+
+    <div id="ctl00_ctl00_cplhLevelOne_divSearch">
+        <br />
+        <table border="0" style="height:50px;width:100%;">
+			<tr valign="middle">
+				<td align="left" style="width:25%;"><span id="ctl00_ctl00_cplhLevelOne_lblSearchClientName" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Client Name</span>&nbsp;&nbsp;
+                    <input name="ctl00$ctl00$cplhLevelOne$txtSearchClientName" type="text" maxlength="150" id="ctl00_ctl00_cplhLevelOne_txtSearchClientName" style="color:Black;font-family:Trebuchet MS;font-size:11px;width:150px;" /></td><td align="left" style="width:17%;"><span id="ctl00_ctl00_cplhLevelOne_lblSearchProjectID" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Project ID</span>&nbsp;&nbsp;
+                    <input name="ctl00$ctl00$cplhLevelOne$txtSearchProjectID" type="text" maxlength="15" id="ctl00_ctl00_cplhLevelOne_txtSearchProjectID" style="color:Black;font-family:Trebuchet MS;font-size:11px;width:75px;" /></td><td align="left" style="width:25%;"><span id="ctl00_ctl00_cplhLevelOne_lblSearchProjectName" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Project Name</span>&nbsp;&nbsp;
+                    <input name="ctl00$ctl00$cplhLevelOne$txtSearchProjectName" type="text" maxlength="150" id="ctl00_ctl00_cplhLevelOne_txtSearchProjectName" style="color:Black;font-family:Trebuchet MS;font-size:11px;width:150px;" /></td><td align="left"><input type="submit" name="ctl00$ctl00$cplhLevelOne$cmdGo" value="Go" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctl00$cplhLevelOne$cmdGo&quot;, &quot;&quot;, true, &quot;LevelTwoGroup&quot;, &quot;&quot;, false, false))" id="ctl00_ctl00_cplhLevelOne_cmdGo" style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:25px;" /></td>
+			</tr><tr valign="middle">
+				<td><span id="ctl00_ctl00_cplhLevelOne_regexClientName" style="color:Red;font-family:Trebuchet MS;font-size:11px;visibility:hidden;">Alpha numeric, -, _, % and space only</span><br />
+                </td><td><span id="ctl00_ctl00_cplhLevelOne_regexProjectId" style="color:Red;font-family:Trebuchet MS;font-size:11px;visibility:hidden;">Numeric values only</span></td><td><span id="ctl00_ctl00_cplhLevelOne_regexProjectName" style="color:Red;font-family:Trebuchet MS;font-size:11px;visibility:hidden;">Alpha numeric, -, _, % and space only</span><br />
+                </td>
+			</tr>
+		</table>
+    </div>
+    <div id="ctl00_ctl00_cplhLevelOne_divProjectDetails">
+        <table id="ctl00_ctl00_cplhLevelOne_ProjectInfo" border="0" style="width:100%;">
+			<tr valign="middle">
+				<td align="right" style="width:10%;"><span id="ctl00_ctl00_cplhLevelOne_Label1" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Project ID:</span></td><td style="width:15%;"><span id="ctl00_ctl00_cplhLevelOne_lblProjectID" style="color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;">58468</span></td><td align="right" style="width:10%;"><span id="ctl00_ctl00_cplhLevelOne_Label9" style="color:Black;font-family:Trebuchet MS;font-size:11px;">RMS Project Start Date:</span></td><td style="width:10%;"><span id="ctl00_ctl00_cplhLevelOne_lblProjectStartDate" style="color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;">18-Apr-2011</span></td><td align="left" style="width:25%;"><span id="ctl00_ctl00_cplhLevelOne_Label5" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Client:</span>
+                    &nbsp;
+                
+                    <span id="ctl00_ctl00_cplhLevelOne_lblClientName" style="color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;">PT Binara Guna Mediktama(RSPI)</span></td>
+			</tr><tr>
+				<td align="right"><span id="ctl00_ctl00_cplhLevelOne_Label7" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Project Amount:</span></td><td><span id="ctl00_ctl00_cplhLevelOne_lblProjectAmount" style="color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;">USD 28440.00</span></td><td align="right" style="width:15%;"><span id="ctl00_ctl00_cplhLevelOne_Label2" style="color:Black;font-family:Trebuchet MS;font-size:11px;">RMS Project End Date:</span></td><td style="width:10%;"><span id="ctl00_ctl00_cplhLevelOne_lblProjectEndDate" style="color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;">31-Aug-2011</span></td><td align="left" style="width:25%;"><span id="ctl00_ctl00_cplhLevelOne_Label3" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Project Name:</span><span id="ctl00_ctl00_cplhLevelOne_lblProjectName" style="color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;">RSPI HRMS Consulting 1</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              
+                    <span id="ctl00_ctl00_cplhLevelOne_Label4" style="color:Black;font-family:Trebuchet MS;font-size:11px;">SOW STATUS:</span><span id="ctl00_ctl00_cplhLevelOne_lblSowStatus" style="color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;">Y</span></td>
+			</tr>
+		</table>
+    </div>
+    
+    <div id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_divheader">
+        <table id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ViewReportTable" align="Center" border="0" style="width:100%;">
+			<tr valign="middle">
+				<td style="background-color:#82A4C7;border-color:Black;border-width:1px;border-style:Solid;font-family:Trebuchet MS;font-weight:bold;"><span id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_lblReportHead" style="display:inline-block;color:Black;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:390px;">Forecast Reports</span></td>
+			</tr>
+		</table>
+    </div>
+    <div id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_divReport">
+        <br />
+        <table id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ViewReportContent" cellspacing="2" cellpadding="0" border="0" style="background-color:White;border-color:Black;border-width:1px;border-style:Solid;height:318px;width:100%;">
+			<tr align="center" valign="bottom" style="height:30px;">
+				<td align="center" colspan="3"><table align="Center" border="0">
+					<tr align="left">
+						<td><table cellspacing="2" cellpadding="0" border="0" style="background-color:White;border-color:Black;border-width:1px;border-style:Solid;width:100%;">
+							<tr valign="middle" style="height:30px;">
+								<td style="width:40%;"><span id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_lblLeft" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Available Periods</span></td><td style="width:20%;"></td><td style="width:40%;"><span id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_lblRight" style="color:Black;font-family:Trebuchet MS;font-size:11px;">Selected Periods</span></td>
+							</tr><tr valign="middle" style="height:30px;">
+								<td><select size="4" name="ctl00$ctl00$cplhLevelOne$cplhLevelTwo$ItemSelector$lstLeft" multiple="multiple" id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_lstLeft" style="color:Black;font-family:Trebuchet MS;font-size:11px;height:380px;width:277px;">
+
+								</select></td><td align="center" valign="middle"><input type="submit" name="ctl00$ctl00$cplhLevelOne$cplhLevelTwo$ItemSelector$cmdMoveSelectedToRight" value=">" id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_cmdMoveSelectedToRight" disabled="disabled" style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:50px;" />
+            <br />
+            <input type="submit" name="ctl00$ctl00$cplhLevelOne$cplhLevelTwo$ItemSelector$cmdMoveAllToRight" value=">>" id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_cmdMoveAllToRight" disabled="disabled" style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:50px;" />
+            <br />
+            <input type="submit" name="ctl00$ctl00$cplhLevelOne$cplhLevelTwo$ItemSelector$cmdMoveSelectedToLeft" value="&lt;" id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_cmdMoveSelectedToLeft" disabled="disabled" style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:50px;" />
+            <br />
+            <input type="submit" name="ctl00$ctl00$cplhLevelOne$cplhLevelTwo$ItemSelector$cmdMoveAllToLeft" value="&lt;&lt;" id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_cmdMoveAllToLeft" disabled="disabled" style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:50px;" /></td><td><select size="4" name="ctl00$ctl00$cplhLevelOne$cplhLevelTwo$ItemSelector$lstRight" multiple="multiple" id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_lstRight" style="color:Black;font-family:Trebuchet MS;font-size:11px;height:380px;width:277px;">
+
+								</select></td>
+							</tr>
+						</table>
+</td>
+					</tr>
+				</table></td>
+			</tr><tr valign="middle" style="height:30px;">
+				<td align="left" style="width:15%;"></td><td align="center" style="width:70%;"><input type="submit" name="ctl00$ctl00$cplhLevelOne$cplhLevelTwo$cmdViewReports" value="View SpreadSheet" id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_cmdViewReports" OnClientClick="return PopupReport(document.getElementById('ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_lstRight'), 'Selected Periods')" style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;" />
+                     &nbsp;  &nbsp;   
+           <input type="submit" name="ctl00$ctl00$cplhLevelOne$cplhLevelTwo$cmdViewReportPage" value="View Report Page" id="ctl00_ctl00_cplhLevelOne_cplhLevelTwo_cmdViewReportPage" OnClientClick="return PopupReport(document.getElementById('ctl00_ctl00_cplhLevelOne_cplhLevelTwo_ItemSelector_lstRight'), 'Selected Periods')" style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;" /></td><td align="left" style="width:10%;"></td>
+			</tr>
+		</table>
+    </div>
+    
+
+     
+<table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+			<tr style="background-color:#82A4C7;font-family:Trebuchet MS;">
+				<td align="left"><span id="ctl00_ctl00_Label1" style="color:Navy;font-family:Trebuchet MS;font-size:10px;font-weight:bold;">¬†Best viewed in 1024x768 resolution</span></td><td align="right"><span id="ctl00_ctl00_lblCopyright" style="color:Navy;font-family:Trebuchet MS;font-size:10px;font-weight:bold;">Copyright ¬© 2007, MphasiS an EDS Company. All rights reserved. </span></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+        </div>
+    
+<script type="text/javascript">
+<!--
+var Page_Validators =  new Array(document.getElementById("ctl00_ctl00_cplhLevelOne_regexClientName"), document.getElementById("ctl00_ctl00_cplhLevelOne_regexProjectId"), document.getElementById("ctl00_ctl00_cplhLevelOne_regexProjectName"));
+// -->
+</script>
+
+<script type="text/javascript">
+<!--
+var ctl00_ctl00_cplhLevelOne_regexClientName = document.all ? document.all["ctl00_ctl00_cplhLevelOne_regexClientName"] : document.getElementById("ctl00_ctl00_cplhLevelOne_regexClientName");
+ctl00_ctl00_cplhLevelOne_regexClientName.controltovalidate = "ctl00_ctl00_cplhLevelOne_txtSearchClientName";
+ctl00_ctl00_cplhLevelOne_regexClientName.errormessage = "Alpha numeric, -, _, % and space only";
+ctl00_ctl00_cplhLevelOne_regexClientName.validationGroup = "LevelTwoGroup";
+ctl00_ctl00_cplhLevelOne_regexClientName.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_ctl00_cplhLevelOne_regexClientName.validationexpression = "^[a-zA-Z0-9%\\s_-]{1,150}$";
+var ctl00_ctl00_cplhLevelOne_regexProjectId = document.all ? document.all["ctl00_ctl00_cplhLevelOne_regexProjectId"] : document.getElementById("ctl00_ctl00_cplhLevelOne_regexProjectId");
+ctl00_ctl00_cplhLevelOne_regexProjectId.controltovalidate = "ctl00_ctl00_cplhLevelOne_txtSearchProjectID";
+ctl00_ctl00_cplhLevelOne_regexProjectId.errormessage = "Numeric values only";
+ctl00_ctl00_cplhLevelOne_regexProjectId.validationGroup = "LevelTwoGroup";
+ctl00_ctl00_cplhLevelOne_regexProjectId.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_ctl00_cplhLevelOne_regexProjectId.validationexpression = "^[\\d\\s]{1,15}$";
+var ctl00_ctl00_cplhLevelOne_regexProjectName = document.all ? document.all["ctl00_ctl00_cplhLevelOne_regexProjectName"] : document.getElementById("ctl00_ctl00_cplhLevelOne_regexProjectName");
+ctl00_ctl00_cplhLevelOne_regexProjectName.controltovalidate = "ctl00_ctl00_cplhLevelOne_txtSearchProjectName";
+ctl00_ctl00_cplhLevelOne_regexProjectName.errormessage = "Alpha numeric, -, _, % and space only";
+ctl00_ctl00_cplhLevelOne_regexProjectName.validationGroup = "LevelTwoGroup";
+ctl00_ctl00_cplhLevelOne_regexProjectName.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_ctl00_cplhLevelOne_regexProjectName.validationexpression = "^[a-zA-Z0-9%\\s_-]{1,150}$";
+// -->
+</script>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWDQKC4o+DCgKRl9XRDgKniJq+DQLr3LrdBQK3o7PtBALRv/SbDwLWkPuQBQKDtJO3BgKgsOOhAgLq6+zyCwL49/rwDgLivO6gCgL+tqhXr/Vd7UEDgvB5phOPVeZj5rYxByM=" />
+</div>
+
+<script type="text/javascript">
+<!--
+var ctl00_ctl00_MnuMainMenu_Data = new Object();
+ctl00_ctl00_MnuMainMenu_Data.disappearAfter = 2000;
+ctl00_ctl00_MnuMainMenu_Data.horizontalOffset = 0;
+ctl00_ctl00_MnuMainMenu_Data.verticalOffset = 0;
+ctl00_ctl00_MnuMainMenu_Data.hoverClass = 'ctl00_ctl00_MnuMainMenu_14';
+ctl00_ctl00_MnuMainMenu_Data.hoverHyperLinkClass = 'ctl00_ctl00_MnuMainMenu_13';
+ctl00_ctl00_MnuMainMenu_Data.iframeUrl = '/WebResource.axd?d=LPL41JzbUwy572hGPfzZ7A2&t=633390169780551566';
+// -->
+</script>
+
+<script type="text/javascript">
+<!--
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+// -->
+</script>
+        </form>
+</body>
+</html>
+   <!--J¥>· ±‰P˙:UTwÖÏfÖ$P°/Ã+™ Vã≤2÷¸8DÑü*5S)JÎ¿ÆQJÑ££ÏÙƒê‡<™Ω^çÂ£Sæ∫Âá◊¥Iç[ÂÀ„JßˆÑ¨¨Æ÷*ã÷˙íjCLõÜƒe?»qØ-7Í?Ù°≈)aå¢%F™ªâÆ«‡V -Tã@‹Çˆ<çgä2tƒ≠•lep.{PZ§J∑øÔÚYöhîòù6Ä=l’+C&∑-ñ ºíåOÔ-ûóLÜòÉµ`÷8M∏2yÙAê˛∑·ç€Øπ≤æÍ‡Q¶\≥/,!Œ‡J!V’«£íêP˝≠≠ûµ(÷º≥Ïx)OÈ≥ªøU	ì≈£xÀBSΩ?XH3WW†eV^Lá=ó|ü4?ô∞yÓ_Éf•T(bvÑÍï*BÙÇŒw∂xw|smyJc¸⁄¥? h[˛€î_—$ß˝⁄NÚ»¬“®5LtvÑ%°ôïß‡V«rª3»Kzë®˘Ö ÍàR)ì¯ÍàÍàÍàßUNë1tP=à Íà-->

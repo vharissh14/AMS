@@ -1,0 +1,57 @@
+1. Insert for role
+2. Insert for user (Userr table)
+3. Insert for Car Parking
+4. Insert for Marital Status
+5. Insert for Title
+6. Insert expenses and Rental type
+
+/*-------------------------- Table tbl_Payment Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Payment') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Payment
+    IF OBJECT_ID('dbo.tbl_Payment') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Payment >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Payment >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Payment
+(
+	int_Seq_No		INT		NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+	txt_Payment_Type	VARCHAR(01)	NULL,   	-- (C - Credit (Recevied) / D - Debit (Payment made) )
+	int_Account_Mst		INT		NULL FOREIGN KEY REFERENCES tbl_Lkup(int_Seq_No), 
+	int_Amount		DECIMAL(8,2)	NOT NULL,
+	int_Flat_Mst		INT		NULL FOREIGN KEY REFERENCES tbl_Flat_Mst(int_Seq_No),
+	int_Payment_Mode	INT		NOT NULL,	-- (1 - Cheque, 2 - DD, 3 - Cash, 4 - MT)
+	txt_Payment_Details	VARCHAR(20)	NULL,		-- (Cheque Number, DD number, MT number etc)
+	dte_Payment_From	DATETIME	NULL,		-- (Payment starting date)
+	dte_Payment_To		DATETIME	NULL,		-- (Payment end date)
+	dte_Payment_Date	DATETIME	NULL,		-- (Payment date)
+	txt_Remarks		VARCHAR(100)	NULL,
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Payment') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Payment >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Payment >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Payment >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Payment TO PUBLIC
+go
+CREATE INDEX idx_Meeting_Mst
+    ON tbl_Payment(int_Meetng_Mst)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_Payment') AND name='idx_Meeting_Mst')
+    PRINT '<<< CREATED INDEX tbl_Payment.idx_Meeting_Mst>>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_Payment.idx_Meeting_Mst>>>'
+go
+/*-------------------------- Table tbl_Payment End ---------------------------------------*/

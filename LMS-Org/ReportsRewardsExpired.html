@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<style type="text/css">
+      .graph {
+        background-color: #C8C8C8;
+        border: solid 1px black;
+      }
+
+      .graph td {
+        font-family: verdana, arial, sans serif;
+      }
+
+      .graph thead th {
+        border-bottom: double 3px black;
+        font-family: verdana, arial, sans serif;
+        padding: 1em;
+      }
+
+      .graph tfoot td {
+        border-top: solid 1px #999999;
+        font-size: x-small;
+        text-align: center;
+        padding: 0.5em;
+        color: #666666;
+      }
+
+      .bar {
+        background-color: white;
+        text-align: right;
+        border-left: solid 1px black;
+        padding-right: 0.5em;
+        width: 400px;
+      }
+
+      .bar div {
+        border-top: solid 2px #0077DD;
+        background-color: #004080;
+        border-bottom: solid 2px #002266;
+        text-align: right;
+        color: white;
+        float: left;
+        padding-top: 0;
+        height: 1em;
+      }
+
+      body {
+        background-color: white;
+      }
+    </style>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+
+                    <div class="leftmenu">
+                    	<ul>
+							<li>Rewards
+								<ul>
+									<li><a href="ReportsRewards.html">Summary</a></li>
+									<li><a href="ReportsRewardsSchemeanalysis.html">Scheme Analysis</a></li>
+									<li><a href="ReportsRewardsExpired.html">Expired</a></li>
+
+								</ul>
+							</li>
+                        </ul>
+                    </div>
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#">Reports</a><a href="#">Rewards</a>Expired Report</p>
+                        <h1>Report Rewards Expired </h1>
+                    	<p>
+                        	This page is for users to view Expired Report details online that is stored in database for Loyalty programs.
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                        	<table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Rewards Type:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Points</option>
+                                          <option>Cash</option>
+                                          <option>Vouchers</option>
+                                          <option>Coupons</option>
+
+                                        </select></td>
+
+                                  </tr>
+                                	<tr>
+                                    	<th class="column1">From Date:</th>
+                                        <td><input type="text" name="fdate2" class="mandatory"  id="fdate2" style="width:110px" />
+                                        <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate2')" style="cursor:pointer" /></td>
+                                        <th class="column1">To Date:</th>
+                                        <td><input type="text" name="fdate3" class="mandatory"  id="fdate3" style="width:110px" />
+                                        <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate3')" style="cursor:pointer" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+							<input name="CreateNew" class="primarybuttons" type="button" onclick="document.getElementById('searchdetails').style.display='';" value="Submit" />
+                   	          	<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','Index.html');return document.MM_returnValue" value="Cancel" />
+
+					<br>
+					<br>
+					<br>
+
+					<table width="690" class="graph" cellspacing="6" cellpadding="3" id="searchdetails" style="display:none;">
+					 <thead>
+                                    <tr >
+                                        <th colspan="2">Expired Report</th>
+
+                                    </tr>
+                     </thead>
+					<thead>
+							<tr class="odd"><th colspan="3">Rewards Category</th></tr>
+							</thead>
+							<tbody>
+							<tr>
+							  <td width="100">Rewards&nbsp;Points&nbsp;</td><td width="400" class="bar"><div style="width: 13%"></div>200</td><td>(3)</td>
+							</tr>
+							<tr>
+							  <td>Cash</td><td class="bar"><div style="width: 20%"></div>400</td><td>(4)</td>
+							</tr>
+							<tr>
+							  <td>Vouchers</td><td class="bar"><div style="width: 50%"></div>10</td><td></td>
+							</tr>
+							<tr>
+							  <td>Coupons</td><td class="bar"><div style="width: 60%"></div>12</td><td></td>
+							</tr>
+							<tr>
+							  <td>Customers</td><td class="bar"><div style="width: 30%"></div>6</td><td></td>
+							</tr>
+						  </tbody>
+
+					</table>
+
+
+
+
+                    	</form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--ùaåÆ{L†AÙåý@z}´ j ¨Êsúˆaù]¶BŠè`¨¨½!—"LMÁA¿ôádÑ×†jx8›Ó(@By'Ìüê\ÑFÏRì\TCÝ·¦oÈ8û»c,K!7ÔÏlJ‹›AkÐV€g¥}XRçƒƒ%¢TÜÞ·%¿ÑüÀû˜ÔPÔë½îÑ-t™jvï}`»hïŠ›*[K£öævMÁÊdñ—»úM!×¯RÝ¹ú¬–W3?ÏFYÔµ P³ŽÂÌ¾uxÇ}Ü:{NŽð[•¤$¦Úõ·pƒn«Ød¼ìê°¹0<¢sÎ€ÍøÔÎí€Åì¬~%õëŸàšH?P;Pô‡ŸÜÝªÑkÒí-'ØNM÷£õG“"nr¨·°¹<Íc¸ßc%ôn.ˆ¯ êˆR)“øêˆêˆêˆ§UN¨1tP-õˆ êˆ-->

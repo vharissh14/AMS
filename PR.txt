@@ -1,0 +1,578 @@
+USE db_ams
+go
+
+/*-------------------------- Drop Table Scripts -----------------------------------------*/
+
+IF OBJECT_ID('dbo.tbl_Payment') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Payment
+    IF OBJECT_ID('dbo.tbl_Payment') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Payment >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Payment >>>'
+END
+go
+
+IF OBJECT_ID('dbo.tbl_Account_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Account_Mst
+    IF OBJECT_ID('dbo.tbl_Account_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Account_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Account_Mst >>>'
+END
+go
+
+IF OBJECT_ID('dbo.tbl_Meeting_Participant') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Meeting_Participant
+    IF OBJECT_ID('dbo.tbl_Meeting_Participant') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Meeting_Participant >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Meeting_Participant >>>'
+END
+go
+
+IF OBJECT_ID('dbo.tbl_Meeting_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Meeting_Mst
+    IF OBJECT_ID('dbo.tbl_Meeting_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Meeting_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Meeting_Mst >>>'
+END
+go
+
+IF OBJECT_ID('dbo.tbl_Owner_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Owner_Mst
+    IF OBJECT_ID('dbo.tbl_Owner_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Owner_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Owner_Mst >>>'
+END
+go
+
+IF OBJECT_ID('dbo.tbl_Flat_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Flat_Mst
+    IF OBJECT_ID('dbo.tbl_Flat_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Flat_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Flat_Mst >>>'
+END
+go
+
+IF OBJECT_ID('dbo.tbl_Apart_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Apart_Mst
+    IF OBJECT_ID('dbo.tbl_Apart_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Apart_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Apart_Mst >>>'
+END
+go
+
+IF OBJECT_ID('dbo.tbl_User_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_User_Mst
+    IF OBJECT_ID('dbo.tbl_User_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_User_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_User_Mst >>>'
+END
+go
+
+IF OBJECT_ID('dbo.tbl_Lkup') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Lkup
+    IF OBJECT_ID('dbo.tbl_Lkup') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Lkup >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Lkup >>>'
+END
+go
+
+
+
+/*-------------------------- Create Table Scripts -----------------------------------------*/
+
+
+/*-------------------------- Table tbl_Lkup Start -----------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Lkup') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Lkup
+    IF OBJECT_ID('dbo.tbl_Lkup') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Lkup >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Lkup >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Lkup
+(
+	int_Seq_No		INT		NOT NULL PRIMARY KEY,	
+	int_Lookup_Type		INT		NOT NULL, 	-- Type(For ex: Location, Currency, etc)
+	int_Lookup_Code		INT		NOT NULL, 	-- Lookup Code
+	int_Sub_Code		INT		NOT NULL, 	-- Lookup Code
+	txt_Lookup_Value	VARCHAR(100)	NOT NULL, 	-- Lookup Value
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL	,	-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Lkup') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Lkup >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Lkup >>>'
+go
+
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Lkup >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Lkup TO PUBLIC
+go
+
+CREATE UNIQUE INDEX idx_Code_Sub
+    ON tbl_Lkup(int_Lookup_Type,int_Lookup_Code,int_sub_Code)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_Lkup') AND name='idx_Code_Sub')
+    PRINT '<<< CREATED INDEX tbl_Lkup.idx_Code_Sub >>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_Lkup.idx_Code_Sub >>>'
+go
+/*-------------------------- Table tbl_Lkup End -------------------------------------------*/
+/*-------------------------- Table tbl_User_Mst Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_User_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_User_Mst
+    IF OBJECT_ID('dbo.tbl_User_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_User_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_User_Mst >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_User_Mst
+(
+	int_Seq_No		INT		IDENTITY(1,1) NOT NULL PRIMARY KEY,	
+	txt_User_ID		VARCHAR(20)	NOT NULL,
+	int_Role_Mst		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Lkup(int_Seq_No), 
+	int_Flat_Mst		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Flat_Mst(int_Seq_No), 
+	txt_Password		VARCHAR(30)	NOT NULL,
+	txt_First_Name		VARCHAR(50)	NOT NULL,
+	txt_Last_Name		VARCHAR(50)	NOT NULL,
+	txt_Mail_Address	VARCHAR(60)	NOT NULL,
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_User_Mst') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_User_Mst >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_User_Mst >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_User_Mst >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_User_Mst TO PUBLIC
+go
+CREATE UNIQUE INDEX idx_User_ID
+    ON tbl_User_Mst(txt_User_ID)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_User_Mst') AND name='idx_User_ID')
+    PRINT '<<< CREATED INDEX tbl_User_Mst.idx_User_ID>>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_User_Mst.idx_User_ID>>>'
+go
+/*-------------------------- Table tbl_User_Mst End ---------------------------------------*/
+/*-------------------------- Table tbl_Apart_Mst Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Apart_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Apart_Mst
+    IF OBJECT_ID('dbo.tbl_Apart_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Apart_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Apart_Mst >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Apart_Mst
+(
+	int_Seq_No		INT		NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+	txt_Apart_ID		VARCHAR(20)	NOT NULL,
+	txt_Apart_Name		VARCHAR(100)	NOT NULL,
+	dte_Apart_Est		DATETIME	NULL,
+	dte_Apart_Complete	DATETIME	NULL,
+	int_Apart_Type		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Lkup(int_Seq_No), 
+	int_No_Blocks		INT		NULL, 
+	int_No_Villa		INT		NULL, 
+	txt_Address1		VARCHAR(50)	NULL,
+	txt_Address2		VARCHAR(50)	NULL,
+	txt_Address3		VARCHAR(50)	NULL,
+	txt_City		VARCHAR(50)	NULL,
+	txt_State		VARCHAR(50)	NULL,
+	txt_Country		VARCHAR(50)	NULL,
+	txt_Pin_Code		VARCHAR(50)	NULL,
+	txt_Patta_No		VARCHAR(50)	NULL,
+	txt_Reg_Office		VARCHAR(50)	NULL,
+	int_Total_Length	DECIMAL(5,2)	NULL,
+	int_Total_Breadth	DECIMAL(5,2)	NULL,
+	int_Total_Sqft		DECIMAL(5,2)	NULL,
+	int_Uarban_Tax_Amt	DECIMAL(5,2)	NULL,
+	txt_Maint_Calc_Ind	VARCHAR(01)	NOT NULL,	-- (U - Using UDS, S - Using Sqft)
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Apart_Mst') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Apart_Mst >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Apart_Mst >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Apart_Mst >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Apart_Mst TO PUBLIC
+go
+CREATE UNIQUE INDEX idx_Apart_ID
+    ON tbl_Apart_Mst(txt_Apart_ID)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_Apart_Mst') AND name='idx_Apart_ID')
+    PRINT '<<< CREATED INDEX tbl_Apart_Mst.idx_Apart_ID>>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_Apart_Mst.idx_Apart_ID>>>'
+go
+/*-------------------------- Table tbl_Apart_Mst End ---------------------------------------*/
+
+/*-------------------------- Table tbl_Flat_Mst Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Flat_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Flat_Mst
+    IF OBJECT_ID('dbo.tbl_Flat_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Flat_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Flat_Mst >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Flat_Mst
+(
+	int_Seq_No		INT		NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+	int_Apart_Mst		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Apart_Mst(int_Seq_No), 
+	txt_Flat_ID		VARCHAR(20)	NOT NULL,
+	int_Flat_Size		DECIMAL(5,2)	NOT NULL,
+	int_Flat_UDS		DECIMAL(5,2)	NOT NULL,
+	int_Maint_Amt		DECIMAL(6,2)	NOT NULL,  	-- Maintenance Charge for the flat.
+	int_No_Balcony		SMALLINT	NULL,
+	int_Garden_Size		DECIMAL(5,2)	NULL,
+	int_Car_Parking		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Lkup(int_Seq_No), 
+	txt_Penthouse_Ind	VARCHAR(01)	NULL,   	-- (Y/N)
+	int_No_BedRooms		SMALLINT	NULL,
+	int_No_BathRooms	SMALLINT	NULL,
+	int_No_Kichens		SMALLINT	NULL,
+	int_No_Halls		SMALLINT	NULL,
+	int_No_DiningHalls	SMALLINT	NULL,
+	int_No_PoojaRooms	SMALLINT	NULL,
+	dte_Purchase		DATETIME	NULL,
+	txt_FirstOwner_Ind	VARCHAR(01)	NULL,   	-- (Y/N)
+	txt_Rental_Ind		VARCHAR(01)	NULL,   	-- (Y/N)
+	int_No_Members		SMALLINT	NULL,
+	int_Property_Tax	DECIMAL(5,2)	NOT NULL,
+	dte_Pro_Next_Due	DATETIME	NULL,
+	int_Sewage_Tax		DECIMAL(5,2)	NOT NULL,
+	dte_Sew_Next_Due	DATETIME	NULL,
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Flat_Mst') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Flat_Mst >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Flat_Mst >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Flat_Mst >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Flat_Mst TO PUBLIC
+go
+CREATE UNIQUE INDEX idx_Flat_ID
+    ON tbl_Flat_Mst(txt_Flat_ID)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_Flat_Mst') AND name='idx_Flat_ID')
+    PRINT '<<< CREATED INDEX tbl_Flat_Mst.idx_Flat_ID>>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_Flat_Mst.idx_Flat_ID>>>'
+go
+
+/*-------------------------- Table tbl_Flat_Mst End ---------------------------------------*/
+
+/*-------------------------- Table tbl_Owner_Mst Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Owner_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Owner_Mst
+    IF OBJECT_ID('dbo.tbl_Owner_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Owner_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Owner_Mst >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Owner_Mst
+(
+	int_Seq_No		INT		NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+	int_User_Mst		INT		NOT NULL FOREIGN KEY REFERENCES tbl_User_Mst(int_Seq_No), 
+	txt_Identity_No		VARCHAR(20)	NOT NULL,
+	int_Title		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Lkup(int_Seq_No), 
+	txt_First_Name		VARCHAR(50)	NULL,
+	txt_Last_Name		VARCHAR(50)	NULL,
+	txt_Gender		VARCHAR(01)	NULL,   	-- (M/F)
+	int_Marital_Sts		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Lkup(int_Seq_No), 
+	dte_DOB			DATETIME	NULL,
+	txt_Contact_Home	VARCHAR(20)	NULL,   	-- Home Number
+	txt_Contact_Mobile	VARCHAR(20)	NULL,   	-- Mobile Number
+	txt_Contact_Fax		VARCHAR(20)	NULL,   	-- Fax Number
+	txt_Contact_Email	VARCHAR(20)	NULL,   	-- Email Address
+	txt_Address_Line1	VARCHAR(50)	NULL,   	-- Address Line 1
+	txt_Address_Line2	VARCHAR(50)	NULL,   	-- Address Line 2
+	txt_Address_Line3	VARCHAR(50)	NULL,   	-- Address Line 3
+	txt_Unit_No		VARCHAR(10)	NULL,   	-- Address Unit No
+	txt_City		VARCHAR(50)	NULL,   	-- Address City
+	txt_State		VARCHAR(50)	NULL,   	-- Address State
+	txt_Country		VARCHAR(50)	NULL,   	-- Address Country
+	txt_Postal_Code		VARCHAR(20)	NULL,   	-- Address Postal Code
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Owner_Mst') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Owner_Mst >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Owner_Mst >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Owner_Mst >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Owner_Mst TO PUBLIC
+go
+CREATE UNIQUE INDEX idx_Identity_No
+    ON tbl_Owner_Mst(txt_Identity_No)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_Owner_Mst') AND name='idx_Identity_No')
+    PRINT '<<< CREATED INDEX tbl_Owner_Mst.idx_Identity_No>>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_Owner_Mst.idx_Identity_No>>>'
+go
+/*-------------------------- Table tbl_Owner_Mst End ---------------------------------------*/
+
+/*-------------------------- Table tbl_Meeting_Mst Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Meeting_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Meeting_Mst
+    IF OBJECT_ID('dbo.tbl_Meeting_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Meeting_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Meeting_Mst >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Meeting_Mst
+(
+	int_Seq_No		INT		NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+	dte_Meeting_Date	DATETIME	NOT NULL,
+	txt_From		VARCHAR(10)	NULL,
+	txt_To			VARCHAR(10)	NULL,
+	txt_Facilitator		VARCHAR(50)	NULL,
+	txt_Location		VARCHAR(50)	NULL,
+	txt_Agenda		VARCHAR(100)	NULL,
+	txt_Meeting_Mins	VARCHAR(255)	NULL,
+	txt_Status		VARCHAR(01)	NULL,   	-- (I - Invite, M - Minutes, C - Cancelled)
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Meeting_Mst') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Meeting_Mst >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Meeting_Mst >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Meeting_Mst >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Meeting_Mst TO PUBLIC
+go
+/*-------------------------- Table tbl_Meeting_Mst End ---------------------------------------*/
+
+/*-------------------------- Table tbl_Meeting_Participant Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Meeting_Participant') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Meeting_Participant
+    IF OBJECT_ID('dbo.tbl_Meeting_Participant') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Meeting_Participant >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Meeting_Participant >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Meeting_Participant
+(
+	int_Seq_No		INT		NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+	int_Meetng_Mst		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Meeting_Mst(int_Seq_No), 
+	int_Owner_Mst		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Owner_Mst(int_Seq_No), 
+	txt_Accept_Ind		VARCHAR(01)	NULL,   	-- (Y/N)
+	txt_Attend_Ind		VARCHAR(01)	NULL,   	-- (Y/N)
+	txt_Read_Ind		VARCHAR(01)	NULL,   	-- (Y/N)
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Meeting_Participant') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Meeting_Participant >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Meeting_Participant >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Meeting_Participant >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Meeting_Participant TO PUBLIC
+go
+CREATE INDEX idx_Meeting_Mst
+    ON tbl_Meeting_Participant(int_Meetng_Mst)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_Meeting_Participant') AND name='idx_Meeting_Mst')
+    PRINT '<<< CREATED INDEX tbl_Meeting_Participant.idx_Meeting_Mst>>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_Meeting_Participant.idx_Meeting_Mst>>>'
+go
+/*-------------------------- Table tbl_Meeting_Participant End ---------------------------------------*/
+
+/*-------------------------- Table tbl_Account_Mst Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Account_Mst') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Account_Mst
+    IF OBJECT_ID('dbo.tbl_Account_Mst') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Account_Mst >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Account_Mst >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Account_Mst
+(
+	int_Seq_No		INT		NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+	txt_Acc_Type		VARCHAR(01)	NULL,   	-- (E - Expenses /R - Rental Income)
+	int_Acc_Detail		INT		NOT NULL FOREIGN KEY REFERENCES tbl_Lkup(int_Seq_No), 
+	int_Acc_Method		INT		NOT NULL,	-- (1 - Monthly, 3 - Quarterly, 6 - Semi Annual, 12 - Annually)
+	int_Amount		DECIMAL(8,2)	NOT NULL,
+	int_Calc_Ind		SMALLINT	NOT NULL,	-- (1 - Add, -1 - Subtract, 0 - Not to Include)
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Account_Mst') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Account_Mst >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Account_Mst >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Account_Mst >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Account_Mst TO PUBLIC
+go
+/*-------------------------- Table tbl_Account_Mst End ---------------------------------------*/
+
+
+/*-------------------------- Table tbl_Payment Start -------------------------------------*/
+/*
+IF OBJECT_ID('dbo.tbl_Payment') IS NOT NULL
+BEGIN
+    DROP TABLE dbo.tbl_Payment
+    IF OBJECT_ID('dbo.tbl_Payment') IS NOT NULL
+        PRINT '<<< FAILED DROPPING TABLE dbo.tbl_Payment >>>'
+    ELSE
+        PRINT '<<< DROPPED TABLE dbo.tbl_Payment >>>'
+END*/
+go
+
+CREATE TABLE
+	dbo.tbl_Payment
+(
+	int_Seq_No		INT		NOT NULL AUTO_INCREMENT PRIMARY KEY,	
+	txt_Payment_Type	VARCHAR(01)	NULL,   	-- (C - Credit (Recevied) / D - Debit (Payment made) )
+	int_Account_Mst		INT		NULL FOREIGN KEY REFERENCES tbl_Lkup(int_Seq_No), 
+	int_Amount		DECIMAL(8,2)	NOT NULL,
+	int_Flat_Mst		INT		NULL FOREIGN KEY REFERENCES tbl_Flat_Mst(int_Seq_No),
+	int_Payment_Mode	INT		NOT NULL,	-- (1 - Cheque, 2 - DD, 3 - Cash, 4 - MT)
+	txt_Payment_Details	VARCHAR(20)	NULL,		-- (Cheque Number, DD number, MT number etc)
+	dte_Payment_From	DATETIME	NULL,		-- (Payment starting date)
+	dte_Payment_To		DATETIME	NULL,		-- (Payment end date)
+	dte_Payment_Date	DATETIME	NULL,		-- (Payment date)
+	txt_Remarks		VARCHAR(100)	NULL,
+	dte_Created_Date	DATETIME	NOT NULL,	-- Created Date
+	int_Created_By		INT		NOT NULL,	-- Created By User ID
+	dte_Updated_Date	DATETIME	NULL,		-- Updated Date
+	int_Updated_By		INT		NULL		-- Updated By User ID
+)
+go
+
+IF OBJECT_ID('dbo.tbl_Payment') IS NOT NULL
+    PRINT '<<< CREATED TABLE dbo.tbl_Payment >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE dbo.tbl_Payment >>>'
+go
+PRINT '<<< GRANTING PERMISSION TO dbo.tbl_Payment >>>'
+GRANT SELECT, INSERT, DELETE, UPDATE ON tbl_Payment TO PUBLIC
+go
+CREATE INDEX idx_From_Date
+    ON tbl_Payment(dte_Payment_From)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_Payment') AND name='idx_From_Date')
+    PRINT '<<< CREATED INDEX tbl_Payment.idx_From_Date>>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_Payment.idx_From_Date>>>'
+go
+CREATE INDEX idx_Payment_Date
+    ON tbl_Payment(dte_Payment_Date)
+go
+IF EXISTS (SELECT * FROM sysindexes WHERE id=OBJECT_ID('tbl_Payment') AND name='idx_Payment_Date')
+    PRINT '<<< CREATED INDEX tbl_Payment.idx_Payment_Date>>>'
+ELSE
+    PRINT '<<< FAILED CREATING INDEX tbl_Payment.idx_Payment_Date>>>'
+go
+/*-------------------------- Table tbl_Payment End ---------------------------------------*/
+
+
+/*-------------------------- End Create Table Scripts -------------------------------------*/
+
+
+/*-------------------------- Table tbl_Lkup INSERT QUERIES Start --------------------------*/
+INSERT INTO tbl_Lkup(int_Seq_No, int_Lookup_Type, int_Lookup_Code, int_Sub_Code, txt_Lookup_Value, dte_Created_Date, int_Created_By) VALUES(44, 5, 1, 0, 'Education Cess Tax', getdate(), 0)
+INSERT INTO tbl_Lkup(int_Seq_No, int_Lookup_Type, int_Lookup_Code, int_Sub_Code, txt_Lookup_Value, dte_Created_Date, int_Created_By) VALUES(45, 5, 1, 1, 'Surcharge', getdate(), 0)
+/*-------------------------- Table tbl_Lkup INSERT QUERIES End ----------------------------*/
+
+/*-------------------------- Table tbl_User_Mst INSERT QUERIES Start ----------------------*/
+INSERT INTO tbl_User_Mst(int_User_Type, txt_User_Name, txt_Password, txt_Disp_Name, txt_Mail_Address, int_Role_Mst, txt_Comp_Mst, int_Res_Mst, dte_Created_Date, int_Created_By) VALUES(0, 'admin', '9lBbqv7LLDbRTZGpt6uSpQ==', 'Admin', 'admin@admin.com', 0, '', 0, getdate(), 0)
+/*-------------------------- Table tbl_User_Mst INSERT QUERIES End ----------------------*/

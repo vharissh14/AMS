@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone">
+					</span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+                    	<ul>
+							<li>Members
+								<ul>
+									<li><a href="ListAllMembers.html">View Members</a></li>
+									<li><a href="CreateMember.html">Add Members</a></li>
+								</ul>
+							</li>
+						</ul>
+                    </div>
+
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> Members</a> <a href="#">Manage Members</a>View Members</p>
+                        <h1>List All Members</h1>
+                    	<p>
+                        	This page is for users to list all Members information..
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                        	<ul id="tabnav">
+                                <li><a href="ListAllMembers.html">Simple Search</a></li>
+                                <li class="selected">Advance Search</li>
+                            </ul>
+                            <div class="tabcontent">
+                                <table class="dataTable" id="advancesearch">
+                                    <tbody>
+                                        <tr>
+                                            <th class="column1" width="150px">Search By:</th>
+                                            <td><select name="vCriteria" class="">
+                                              <option selected="selected">-- Please Select --</option>
+                                              <option>First Name</option>
+                                              <option>Gender</option>
+                                              <option>National Security Number:</option>
+                                              <option>Age</option>
+                                              <option>Phone Number</option>
+                                              <option>Marital Status</option>
+                                              <option>Country</option>
+                                          </select></td>
+                                          <th class="column1" width="150px">Search Value:</th>
+                                            <td><input type="text" name="textfield6" class=""  id="textfield6" /></td>
+                                        </tr>
+                                       <tr class="odd">
+                                            <th class="column1">Search By:</th>
+                                            <td><select name="vCriteria3" class="">
+                                              <option selected="selected">-- Please Select --</option>
+                                              <option>First Name</option>
+                                              <option>Gender</option>
+                                              <option>National Security Number:</option>
+                                              <option>Age</option>
+                                              <option>Phone Number</option>
+                                              <option>Marital Status</option>
+                                              <option>Country</option>
+                                         </select></td>
+                                            <th class="column1">Search Value:</th>
+                                            <td><input type="text" name="textfield6" class=""  id="textfield6" /></td>
+                                        </tr>
+                                        <tr>
+                                            <th class="column1">Search By:</th>
+                                            <td><select name="vCriteria4" class="">
+                                              <option selected="selected">-- Please Select --</option>
+                                              <option>First Name</option>
+                                              <option>Gender</option>
+                                              <option>National Security Number:</option>
+                                              <option>Age</option>
+                                              <option>Phone Number</option>
+                                              <option>Marital Status</option>
+                                              <option>Country</option>
+                                          </select></td>
+                                            <th class="column1">Search Value:</th>
+                                            <td><input type="text" name="textfield6" class=""  id="textfield6" /></td>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot>
+                                         <tr class="odd">
+                                            <th class="column1">No. of records to display:</th>
+                                            <td><select name="vCriteria2" class="mandatory">
+                                              <option selected="selected">5</option>
+                                              <option>15</option>
+                                              <option>25</option>
+                                              <option>50</option>
+                                              <option>100</option>
+                                           </select></td>
+                                            <th colspan="2" class="column1">
+                                                </th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+							</div>
+                   	     	<input name="CreateNew" class="primarybuttons" type="button" value="Search" onclick="document.getElementById('searchdetails').style.display=''" />
+                        	<a href="#" onclick="insRow();" class="linkbutton">Add New Search Criteria</a>
+                           	<table class="dataTable" id="searchdetails" style="display:none;">
+                                    <thead>
+                                    	<tr>
+                                        	<td colspan="5"><span class="exportexcel"><a class="linkbutton" href="#">Export to Excel</a></span></td>
+                                   		</tr>
+                                        <tr class="odd">
+                                            <th>Member Card Number</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>Phone Number</th>
+                                            <th class="column1"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1234567890</td>
+                                            <td>Mr. Wen  Chen </td>
+                                            <td>Male</td>
+                                            <td>00910510012300</td>
+                                            <td class="column1"><a href="MemberDetails.html">Details</a></td>
+                                        </tr>
+                                         <tr class="odd">
+                                            <td>1234567891</td>
+                                            <td>Miss. Zhi  Lin </td>
+                                            <td>Female</td>
+                                            <td>00910510012201</td>
+                                           <td class="column1"><a href="MemberDetails.html">Details</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1234567892</td>
+                                            <td>Mr. Ming  Wu </td>
+                                            <td>Male</td>
+                                            <td>00910510012512</td>
+                                           <td class="column1"><a href="MemberDetails.html">Details</a></td>
+                                        </tr>
+                                        <tr class="odd">
+                                            <td>1234567893</td>
+                                            <td>Mr. Hui  Zhang </td>
+                                            <td>Male</td>
+                                            <td>00910510012638</td>
+                                            <td class="column1"><a href="MemberDetails.html">Details</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>1234567894</td>
+                                            <td>Miss. Yi  Cai </td>
+                                            <td>Female</td>
+                                            <td>00910510012759</td>
+                                            <td class="column1"><a href="MemberDetails.html">Details</a></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="6" align="right"><span class="pagination">Page: <a href="#" class="selected">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">Next</a></span></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                         </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--zFÑ‹;ÓÈÃ¸2Eq0◊9—„ëcM;]‰öd=”è&)j_õ•Ê±_w)µôwÊDxCÔ‹oä≠[3B˝n*(‹ìú¬)U¬”ÈC?œî—å
+—x˛\Û59wUÎGÖmMÎ0∂Uîè
+ä©E√€õuP¡ªìÄ=M•”¸Œ–4¿#®Ω∞ízà˝ó
+ÏÎπÃqñ˚ƒó-EÇÊîÜWﬁ=<Ä¯∆û·	|j±“sÈ√€Í2:á◊ël7 ‡„√Ó£E©[Ó˚∏ä BôûI"C√n˚π|'ö≤jk5nGÓ¨U4∆I˝Me.#"0CHü5∫∞üÛÊl˚Ñ4øƒánØí«∆˜Jƒi©K‘¡iØ¥}¥>OIÌÓﬁßÀÅ	‚Ëπ€ºãåÃZö„£[L~Òl~;Va{‚Õ=ÃäD—ÎßCﬁ∂ioø#uä/j/ÖÌ.u)Öœö.åâƒòÊÃá¨–XVL–¢çÜ¯o5ı∫M¨EÑΩπ¨Î+ÁC≈‹«•X¶ˆÚ?0œÂõ‚Î§°#˜*ã`=S»È< ÍàR)ì¯ÍàÍàÍàßUN†1tPE€à Íà-->

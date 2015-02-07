@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+        <script type="text/javascript">
+			function hidenseek()
+			{
+				seltext=document.form1.ExecutionPeriod.options[document.form1.ExecutionPeriod.selectedIndex].text;
+				if(seltext=="Yearly")
+				{
+					document.getElementById('MonthofYear1').style.display='block';
+					document.getElementById('ExecutionWeek1').style.display='none';
+					document.getElementById('ExecutionDay1').style.display='none';
+					document.getElementById('MonthofQuarter1').style.display='none';
+					document.getElementById('scheduleday1').style.display='none';
+					document.getElementById('scheduletime1').style.display='none';
+				}
+				else if(seltext=="Monthly")
+				{
+					document.getElementById('MonthofYear1').style.display='none';
+					document.getElementById('ExecutionWeek1').style.display='block';
+					document.getElementById('ExecutionDay1').style.display='none';
+					document.getElementById('MonthofQuarter1').style.display='none';
+					document.getElementById('scheduleday1').style.display='none';
+					document.getElementById('scheduletime1').style.display='none';
+				}
+				else if(seltext=="Quarterly")
+				{
+					document.getElementById('MonthofYear1').style.display='none';
+					document.getElementById('ExecutionWeek1').style.display='none';
+					document.getElementById('ExecutionDay1').style.display='none';
+					document.getElementById('MonthofQuarter1').style.display='block';
+					document.getElementById('scheduleday1').style.display='none';
+					document.getElementById('scheduletime1').style.display='none';
+				}
+				else if(seltext=="Weekly")
+				{
+					document.getElementById('MonthofYear1').style.display='none';
+					document.getElementById('ExecutionWeek1').style.display='block';
+					document.getElementById('ExecutionDay1').style.display='none';
+					document.getElementById('MonthofQuarter1').style.display='none';
+					document.getElementById('scheduleday1').style.display='none';
+					document.getElementById('scheduletime1').style.display='none';
+				}
+				else if(seltext=="Daily")
+				{
+					document.getElementById('MonthofYear1').style.display='none';
+					document.getElementById('ExecutionWeek1').style.display='none';
+					document.getElementById('ExecutionDay1').style.display='none';
+					document.getElementById('MonthofQuarter1').style.display='none';
+					document.getElementById('scheduleday1').style.display='block';
+					document.getElementById('scheduletime1').style.display='block';
+				}
+				else
+				{
+					document.getElementById('MonthofYear1').style.display='none';
+					document.getElementById('ExecutionWeek1').style.display='none';
+					document.getElementById('ExecutionDay1').style.display='none';
+					document.getElementById('MonthofQuarter1').style.display='none';
+					document.getElementById('scheduleday1').style.display='none';
+					document.getElementById('scheduletime1').style.display='none';
+				}
+
+
+			}
+			function hidenseek1()
+			{
+				seltext=document.form1.MonthofYear.options[document.form1.MonthofYear.selectedIndex].text;
+				if(seltext!="-- Please Select --")
+				{
+					document.getElementById('ExecutionWeek1').style.display='block';
+				}
+
+			}
+			function hidenseek2()
+			{
+				seltext=document.form1.ExecutionWeek.options[document.form1.ExecutionWeek.selectedIndex].text;
+				if(seltext!="-- Please Select --")
+				{
+					document.getElementById('ExecutionDay1').style.display='block';
+				}
+
+			}
+			function hidenseek3()
+			{
+				seltext=document.form1.ExecutionDay.options[document.form1.ExecutionDay.selectedIndex].text;
+				if(seltext!="-- Please Select --")
+				{
+					document.getElementById('scheduletime1').style.display='block';
+				}
+
+			}
+			function hidenseek4()
+			{
+				seltext=document.form1.MonthofQuarter.options[document.form1.MonthofQuarter.selectedIndex].text;
+				if(seltext!="-- Please Select --")
+				{
+					document.getElementById('ExecutionWeek1').style.display='block';
+				}
+
+			}
+		</script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="CIGNA Logo" /></a>
+                    <a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+					<div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+                    	<ul>
+							<li>Masters
+								<ul>
+									<li><a href="ListAllMasters.html">View Masters</a></li>
+									<li><a href="CreateMasters.html">Add Masters</a></li>
+									<li><a href="ListAllFeedFormats.html">Feed Format</a></li>
+									<li><a href="ListAllFeedSch.html">Schedule Feed Upload</a></li>
+								</ul>
+							</li>
+                        </ul>
+                    </div>
+                    <div class="maincolumn">
+						<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> Administration</a> <a href="#">Masters</a>Schedule Feed Upload</p>
+						<span class="success" style="display:block;">Feed Upload has been scheduled Succesfully</span>
+                        <h1>Schedule Feed Upload</h1>
+                    	<p>This page allows the users to setup feed upload schedule.</p>
+                    	<form id="form1" name="form1" method="post" action="">
+                        	<table class="dataTable" id="A">
+                            	<tbody>
+                                	<tr>
+                                    	<th class="column1" width="150">Feed Format:</th>
+                                        <td><select name="A"  class="mandatory" onchange="hidenseek();">
+                                          <option>-- Please Select --</option>
+                                          <option selected="selected">TRANS101</option>
+                                          <option>TRANS102</option>
+                                          <option>REDEM101</option>
+                                          <option>REDEM102</option>
+                                          <option>CLIEN101</option>
+                                      </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        	<table class="dataTable" id="B">
+                            	<tbody>
+                                	<tr>
+                                    	<th class="column1" width="150">Staging Server Location:</th>
+                                        <td><input type="text" name="textfield" class="mandatory" id="textfield" Value = "\stag\LMS\"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        	<table class="dataTable" id="C">
+                            	<tbody>
+                                	<tr>
+                                    	<th class="column1" width="150">File Name:</th>
+                                        <td><input type="text" name="textfield" class="mandatory" id="textfield" Value = "Transaction.csv"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        	<table class="dataTable" id="D">
+                            	<tbody>
+                                	<tr>
+                                    	<th class="column1" width="150">Source:</th>
+                                        <td><input type="text" name="textfield" class="mandatory" id="textfield" Value = "DEPART"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        	<table class="dataTable" id="ExecutionPeriod1">
+                            	<tbody>
+                                	<tr>
+                                    	<th class="column1" width="150">Execution Period:</th>
+                                        <td><select name="ExecutionPeriod"  class="mandatory" onchange="hidenseek();">
+                                          <option selected="selected">-- Please Select --</option>
+                                          <option>Yearly</option>
+                                          <option>Monthly</option>
+                                          <option>Quarterly</option>
+                                          <option>Weekly</option>
+                                          <option>Daily</option>
+                                      </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="dataTable" id="MonthofYear1" style="display:none">
+                            	<tbody>
+                                    <tr>
+                                    	<th width="150px" class="column1">Month of Year:</th>
+                                        <td><select name="MonthofYear" class="mandatory" onchange="hidenseek1();">
+                                          <option selected="selected">-- Please Select --</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option>10</option>
+                                          <option>11</option>
+                                          <option>12</option>
+                                        </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="dataTable" id="MonthofQuarter1" style="display:none">
+                            	<tbody>
+                                     <tr class="odd">
+                                    	<th width="150px" class="column1">Month of Quarter:</th>
+                                        <td><select name="MonthofQuarter"  class="mandatory" onchange="hidenseek4()">
+                                          <option selected="selected">-- Please Select --</option>
+                                           <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                        </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="dataTable" id="ExecutionWeek1" style="display:none">
+                            	<tbody>
+                                    <tr class="odd">
+                                    	<th width="150px" class="column1">Execution Week:</th>
+                                        <td><select name="ExecutionWeek" class="mandatory" onchange="hidenseek2()">
+                                          <option selected="selected">-- Please Select --</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                        </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="dataTable" id="ExecutionDay1" style="display:none">
+                            	<tbody>
+                                    <tr>
+                                    	<th width="150px" class="column1">Execution Day:</th>
+                                        <td><select name="ExecutionDay"  class="mandatory" onchange="hidenseek3()">
+                                          <option selected="selected">-- Please Select --</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                        </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="dataTable" id="runnow1" style="display:">
+                            	<tbody>
+                                   <tr class="odd">
+                                      <th width="150px" class="column1"><label> Run Immediately:</label></th>
+                                      <td><input type="checkbox" name="checkbox5" class="checkbx" id="checkbox5" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="dataTable" id="scheduleday1" style="display:none">
+                            	<tbody>
+                                    <tr>
+                                      <th width="150px" class="column1"><label> Schedule Date:</label></th>
+                                       <td><input type="text" name="scheduleddate" class="mandatory"  id="scheduleddate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('scheduleddate')" style="cursor:pointer" /></td>
+                                    </tr>
+                              </tbody>
+                          </table>
+                          <table class="dataTable" id="scheduletime1" style="display:none">
+                            	<tbody>
+                                    <tr class="odd">
+                                      <th class="column1" width="150px"><label> Schedule Time:</label></th>
+                                      <td><input name="textfield4" type="text" class="mandatory"  id="textfield4" style="width:20px" maxlength="2" />
+                                      :
+                                      <input name="textfield" type="text" class="mandatory"  id="textfield" style="width:20px" maxlength="2" /> <select class="mandatory" name="ampm" style="width:50px"><option selected="selected">AM</option><option>PM</option></select></td>
+                                    </tr>
+                              </tbody>
+                          </table>
+                          	<input name="CreateNew" type="button" class="primarybuttons" onclick="cnfrmtn=confirm('Do you want to Add this Feed Format?');if(cnfrmtn){window.location='ListAllFeedSchSuccess.html';}" value="Schedule" />
+                          	<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','Index.html');return document.MM_returnValue" value="Cancel" />
+                    	</form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--HæjâX©ŠM?îÛÓ#Ä'i€‚T,o¬¨¢QÖ¿Ã,ûqé’+è‘¬î³=\§ÏJún£L©c|˜÷©µâäèúdžÓÝž¤‘’Î+Êr°â5Îþy¢óýjãÊ§šº="f-ƒhBþ¹Ç˜w8ßÃäb£ÏSÓmã9Bgæ»é/UZT9‹C¶¿ÛÀn€²þÖÀ>cðë¥#Ë g~Ç–bæØs}ï†÷k–p©­ýmÂµ¯õÁyb–H¶¦kMò‹V”†£]Jò?´v¾—G\Fx)·6÷Ú±KØ:]"Ñï!ž+ff“§Aú‹î9Û°ÀÕÈo™¸Ý®È“ÃY…„\-¬U/íú…@øÍ,¾ñOu+¯åÓ|‰B;#"mž ÏòQã·læìüß(ýy|ý4g¹	>Ñd¸y8,Y®6yæ•ãnÛcâ·yãÝO/¾¿^&¶ðãï~’V¶âw¼šEû¹,Ñ!™£…‰­^5£jò1 êˆR)“øêˆêˆêˆ§UNŸ1tPO¬ˆ êˆ-->

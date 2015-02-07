@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>CIGNA LMS</title>
+        <link type="text/css" rel="stylesheet" href="../Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="../Styles/Navigation.css" />
+        <link type="text/css" rel="stylesheet" href="../Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="../Styles/FormElements.css" />
+		<script src="../Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../Scripts/popCalendar.js"></script>
+        <script src="../Scripts/accordian.js" type="text/javascript" ></script>
+    <script src="../Scripts/General.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+        </script>
+	</head>
+	<body onload="new Accordian('basic-accordian',5,'header_highlight');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: Admin | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="../Images/Cigna_Logo.jpg" title="CIGNA Logo" /></a>
+                    <a href="#" class="logo1"><img src="../Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+                    <div>
+                    	<ul id="nav">
+                            <li class="top"><a class="top_link" href="#"><span class="down">REGIONAL CONFIGURATION</span></a>
+                                <ul class="sub">
+                                    <li><a href="#" class="fly">Regional Setup</a>
+                                        <ul>
+                                            <li><a href="CountryRegionSpecificDetails.html">Country / Region Specific Details</a></li>
+                                            <li><a href="LMSSpecificDetails.html">LMS Specific Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Exclusion Reason Management</a>
+                                        <ul>
+                                            <li><a href="ListAllExclusionReasons.html">List All Exclusion Reason</a></li>
+                                           <li><a href="CreateExclusionReason.html">Create New Exclusion Reason</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Dedup Rule Configuration</a>
+                                        <ul>
+                                            <li><a href="DedupConfiguration.html">Dedup Rule Configuration</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="top"><a class="top_link" href="#"><span class="down">USER SETUP</span></a>
+                                <ul class="sub">
+                                	<li><a href="ListAllUsers.html">List All Users</a></li>
+                                    <li><a href="GrandAccessToLMS.html">Grand Access to LMS</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+               		
+                    <div class="leftmenu">
+                    	<ul>
+                        	<li>Regional Setup
+                            	<ul>
+                                	<li><a href="CountryRegionSpecificDetails.html">Country / Region Specific Details</a></li>
+                                   <li><a href="LMSSpecificDetails.html">LMS Specific Details</a></li>
+                                </ul>
+                            </li>
+                            <li>Exclusion Reason Management
+                            	<ul>
+                                	<li><a href="ListAllExclusionReasons.html">List All Exclusion Reason</a></li>
+                                   <li><a href="CreateExclusionReason.html">Create New Exclusion Reason</a></li>
+                                </ul>
+                            </li>
+                            <li>Dedup Rule Configuration
+                            	<ul>
+                                	<li><a href="DedupConfiguration.html" class="selected">Dedup Rule Configuration</a></li>
+                                </ul>
+                            </li>
+                    	</ul>
+                    </div>
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a> Dedup Rule Configuration</p>
+                        <h1>Dedup Rule Configuration</h1>
+                    	<p>
+                        	This page is for the user to to configure Country specific Dedup criteria's. These rules enable LMS application to qualify any inbound client data to Leads database.
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                          <div id="basic-accordian">
+                       	   <div id="test-header" class="accordion_headings1"><input type="checkbox" name="integrity" id="integrity1" class="checkbx" value="checkbox" onclick="checkall(this);" /> Data Integrity Check Rule</div>
+                                 <div id="test-content">                               
+                                	<div class="accordion_child">
+                                    	<table class="dataTable">
+                                            <thead>
+                                                <tr class="odd">
+                                                    <th class="column1"></th>
+                                                    <th>Item</th>
+                                                    <th>Validation Criteria</th>	
+                                                    <th>Validation Parameter</th>
+                                                  <th>&nbsp;</th>
+                                                </tr>	
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="column1" width="30px"> <input type="checkbox" name="integrity" id="integrity11" class="checkbx" value="checkbox" /></th>
+                                                    <td>First Name + Last Name</td>
+                                                    <td>
+                                       	 		  <select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                      </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td><input name="CreateNew2" class="secondarybuttonm" type="button" value="Upload List" /></td>
+                                                </tr>
+                                                 <tr class="odd">
+                                                    <th class="column1"> <input type="checkbox" name="integrity" id="integrity12" class="checkbx" value="checkbox" /></th>
+                                                    <td>Phone Number</td>
+                                                    <td>&nbsp;</td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                 <tr>
+                                                    <th class="column1"> <input type="checkbox" name="integrity" id="integrity13" class="checkbx" value="checkbox" /></th>
+                                                    <td>Zip Code</td>
+                                                    <td>
+                                               	 		<select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr class="odd">
+                                                    <th class="column1"> <input type="checkbox" name="integrity" id="integrity14" class="checkbx" value="checkbox" /></th>
+                                                    <td>Credit Card Number</td>
+                                                    <td>
+                                               	 		<select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                 <tr>
+                                                    <th class="column1"> <input type="checkbox" name="integrity" id="integrity15" class="checkbx" value="checkbox" /></th>
+                                                    <td>Address</td>
+                                                    <td>
+                                               	 		<select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                 <tr class="odd">
+                                                    <th class="column1"> <input type="checkbox" name="integrity" id="integrity16" class="checkbx" value="checkbox" /></th>
+                                                    <td>City</td>
+                                                    <td>
+                                               	 		<select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>	
+                                            </tbody>
+                                        </table>
+                                   </div>
+                                </div>
+                                <div id="test1-header" class="accordion_headings"><input type="checkbox" name="duplication" id="duplication1" class="checkbx" value="checkbox"  onclick="checkall(this);" /> Duplication Check Rule</div>
+                                <span id="test1-content">  
+                            </span>
+                                <div id="test2-header" class="accordion_headings"><input type="checkbox" name="exclusion" id="exclusion1" class="checkbx" value="checkbox"  onclick="checkall(this);"/> Exclusion List Rule</div>
+                                <span id="test2-content">  
+                            </span>
+                            <div id="test3-header" class="accordion_headings1"><input type="checkbox" name="totalsum" id="totalsum1" class="checkbx" value="checkbox" onclick="checkall(this);"/> Total Sum at Risk Rule</div>
+                                  <div id="test3-content">                               
+                                	<div class="accordion_child">
+                                    	<table class="dataTable">
+                                            <thead>
+                                                <tr class="odd">
+                                                    <th class="column1"></th>
+                                                    <th>Item</th>
+                                                    <th>Validation Criteria</th>	
+                                                    <th>Validation Parameter</th>
+                                                </tr>	
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="column1" width="30px"> <input type="checkbox" name="totalsum" id="totalsum11" class="checkbx" value="checkbox" /></th>
+                                                    <td>Total Sum At Risk Validation</td>
+                                                    <td>
+                                       	 		  <select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                      </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                   </div>
+                                </div>
+                            <div id="test4-header" class="accordion_headings1"><input type="checkbox" name="recentcall" id="recentcall1" class="checkbx" value="checkbox"  onclick="checkall(this);"/> Recently Called Rule</div>
+                                  <div id="test4-content">                               
+                                	<div class="accordion_child">
+                                    	<table class="dataTable">
+                                            <thead>
+                                                <tr class="odd">
+                                                    <th class="column1"></th>
+                                                    <th>Item</th>
+                                                    <th>Validation Criteria</th>	
+                                                    <th>Validation Parameter</th>
+                                                </tr>	
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="column1" width="30px"> <input type="checkbox" name="recentcall" id="recentcall11" class="checkbx" value="checkbox" /></th>
+                                                    <td>Recently Called Rule</td>
+                                                    <td>
+                                       	 		  <select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                      </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                   </div>
+                                </div>
+                            <div id="test5-header" class="accordion_headings1"><input type="checkbox" name="personal" id="personal1" class="checkbx" value="checkbox" onclick="checkall(this);"/> Personal Filter Rule</div>
+                                 <div id="test5-content">                               
+                                	<div class="accordion_child">
+                                    	<table class="dataTable">
+                                            <thead>
+                                                <tr class="odd">
+                                                    <th class="column1"></th>
+                                                    <th>Item</th>
+                                                    <th>Validation Criteria</th>	
+                                                    <th>Validation Parameter</th>
+                                                  <th>&nbsp;</th>
+                                                </tr>	
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="column1" width="30px"> <input type="checkbox" name="personal" id="personal11" class="checkbx" value="checkbox" /></th>
+                                                    <td>Age</td>
+                                                    <td>
+                                       	 		  <select name="vCriteria" class="mandatory">
+                                                        	<option>Between</option>
+                                                      </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" style="width:40px" class="mandatory"  id="textfield2" />&nbsp;<input type="text" name="textfield2" style="width:45px"  class="mandatory"  id="textfield2" /></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                 <tr class="odd">
+                                                    <th class="column1"> <input type="checkbox" name="personal" id="personal12" class="checkbx" value="checkbox" /></th>
+                                                    <td>City</td>
+                                                    <td><select name="vCriteria2" class="mandatory">
+                                                      <option>Equal To</option>
+                                                   </select></td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td><input name="CreateNew3" class="secondarybuttonm" type="button" value="Upload List" /></td>
+                                                </tr>
+                                                 <tr>
+                                                    <th class="column1"> <input type="checkbox" name="personal" id="personal13" class="checkbx" value="checkbox" /></th>
+                                                    <td>Salary</td>
+                                                    <td>
+                                               	 		<select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr class="odd">
+                                                    <th class="column1"> <input type="checkbox" name="personal" id="personal14" class="checkbx" value="checkbox" /></th>
+                                                    <td>Nationality</td>
+                                                    <td>
+                                               	 		<select name="vCriteria" class="mandatory">
+                                                        	<option>Equal To</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                                    <td><input name="CreateNew4" class="secondarybuttonm" type="button" value="Upload List" /></td>
+                                                </tr>
+                                                 <tr>
+                                                    <th class="column1"> <input type="checkbox" name="personal" id="personal15" class="checkbx" value="checkbox" /></th>
+                                                    <td>Sex</td>
+                                                    <td>&nbsp;</td>
+                                                    <td><input type="radio"  class="radiobtn" name="radio" id="radio" value="Marital" />
+                                                   <label for="radio">Male</label>&nbsp;<input type="radio"  class="radiobtn" name="radio" id="radio1" value="Marital" />
+                                                   <label for="radio1">Female</label></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                 <tr class="odd">
+                                                    <th class="column1"> <input type="checkbox" name="personal" id="personal16" class="checkbx" value="checkbox" /></th>
+                                                    <td>Marital</td>
+                                                    <td>&nbsp;</td>
+                                                    <td><select name="vCriteria3" class="mandatory">
+                                                      <option>Single</option>
+                                                   </select></td>
+                                                    <td>&nbsp;</td>
+                                                </tr>	
+                                            </tbody>
+                                        </table>
+                                   </div>
+                                </div>
+                            <div id="test6-header" class="accordion_headings1"><input type="checkbox" name="specialcall" id="specialcall1" class="checkbx" value="checkbox" onclick="checkall(this);"/> Special Call Number Filters Rule</div>
+                                  <div id="test6-content">                               
+                                	<div class="accordion_child">
+                                    	<table class="dataTable">
+                                            <thead>
+                                                <tr class="odd">
+                                                    <th class="column1"></th>
+                                                    <th>Item</th>
+                                                </tr>	
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="column1" width="30px"> <input type="checkbox" name="specialcall" id="specialcall11" class="checkbx" value="checkbox" /></th>
+                                                    <td>Prank Call Filter</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="column1"> <input type="checkbox" name="specialcall" id="specialcall12" class="checkbx" value="checkbox" /></th>
+                                                    <td>Deceased Call Filter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                   </div>
+                                </div>
+                            <div id="test7-header" class="accordion_headings1"><input type="checkbox" name="drtv" id="drtv1" class="checkbx" value="checkbox" onclick="checkall(this);"/> DRTV Exclusions Rule</div>
+                                  <div id="test7-content">                               
+                                	<div class="accordion_child">
+                                    	<table class="dataTable">
+                                            <thead>
+                                                <tr class="odd">
+                                                    <th class="column1"></th>
+                                                    <th>Item</th>
+                                                </tr>	
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th class="column1" width="30px"> <input type="checkbox" name="drtv" id="drtv11" class="checkbx" value="checkbox" /></th>
+                                                    <td>DRTV List</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="column1"> <input type="checkbox" name="drtv" id="drtv12" class="checkbx" value="checkbox" /></th>
+                                                    <td>Do not want to be called</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                   </div>
+                                </div>
+                                 <div id="test8-header" class="accordion_headings"><input type="checkbox" name="under" id="under1" class="checkbx" value="checkbox"  onclick="checkall(this);"/> Underwriting Filters Rule</div>
+                                 <span id="test8-content">  
+                                 </span>
+                                <div id="test9-header" class="accordion_headings"><input type="checkbox" name="regulatory" id="regulatory1" class="checkbx" value="checkbox"  onclick="checkall(this);"/> Regulatory Exclusions Rule</div>
+                                 <span id="test9-content">  
+                                 </span>
+                            </div>
+                        	<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','DedupConfigurationSuccess.html');return document.MM_returnValue" value="Save" />
+                        	<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','Index.html');return document.MM_returnValue" value="Cancel" />
+                    	</form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">CIGNA.com</a> | 
+            <a href="#">Copyright</a> | 
+            <a href="#">Legal Disclaimer</a> | 
+            <a href="#">Privacy statement</a> | 
+            <a href="#">Site Help</a> | 
+            <a href="#">FAQ</a> | 
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--…²ê.ô¥ ú,®LÃcƒ÷»V×ÒD¹€m!Á)e-Bz÷Ü¼â¢àV÷n·ˆ¶Pð¿Ð[À¤²˜iœÕõ3™[°¡Ä„È1r‹¶²ÝŠB0A`0ÙEDíšÛ¦½îü7¬:~ƒyX¿Î†‡ô¦§{ô•þüQ¤uƒ1à¢'¥¡$'Š†ÊçF;\¸w9"ê~_)X†–¨}¯Ø‡@ËOÒ´E*ƒ$i»€L@“Ê]™ý8ãzdÀ—mÁPS½zN	#R[í-~'ÛÒ¼é$]a ’½Ò½ß\à„:ÂãÁÌà?náˆSW[[qy+JA<l îÌæÒ­¸SDVj#,¤4ˆ³ú–È›{‡‰kØÏm‚„E—yn7½´¬h·Wi [(×¿ß§ž‹×ˆpÁ×¦iD"ámV€Å›‹^>`/Y»ÆpºŽ3ìnâ`ª£ž¨É‹àÞöàÊ¨ñøWàÐÓ¡8ElìšàS‹+&_«¼ÙºG>ï/§cŠ,ÒûhÒšâš;’béÔ›+Z˜(Ò>sòSºóññ§ï€¹(Zq¾·Cä·unÆ€(ù.Ç­NÐåà€ˆ äˆR'“øäˆäˆäˆ©UN“?tP«—ˆ äˆ-->

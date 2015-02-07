@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+
+                    <div class="leftmenu">
+                    	<ul>
+							<li>Schedule Jobs
+								<ul>
+									<li><a href="ScheduleMonitor.html">Schedule Monitor</a></li>
+								</ul>
+							</li>
+						</ul>
+                    </div>
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> Administration</a><a href="#">Schedule Jobs</a> Schedule Monitor</p>
+                        <h1>Schedule Monitor</h1>
+                    	<p>
+                        	This page is for users to monitor the schedule jobs progress. Based on user selection / input, schedule job information will be displayed in the result page.
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                        	 <ul id="tabnav">
+                            	<li class="selected">Schedule Jobs</li>
+                            </ul>
+                            <div class="tabcontent">
+                            <table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Process Type:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- Please Select --</option>
+                                          <option>Client Upload</option>
+                                          <option>Sales Upload</option>
+                                          <option>Exclusion List Upload</option>
+                                        </select></td>
+                                        <th colspan="2" class="column1">&nbsp;</th>
+                                  </tr>
+                                	<tr class="odd">
+                                    	<th class="column1">Scheduled Execution From Date:</th>
+                                    <td><input type="text" name="fdate" class="mandatory"  id="fdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate')" style="cursor:pointer" /></td>
+                                        <th class="column1" width="150px">Scheduled Execution To Date:</th>
+                                      <td><input type="text" name="tdate" class="mandatory"  id="tdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('tdate')" style="cursor:pointer" /></td>
+                                    </tr>
+                                    <tr>
+                                    	<th class="column1">Initiated By:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- Please Select --</option>
+                                          <option>Afsal KH</option>
+                                          <option>Rahul Shivan</option>
+                                          <option>Meby Prakash</option>
+                                          <option>Hari S</option>
+                                          <option>Rupesh N</option>
+                                        </select></td>
+                                        <th class="column1">Status:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- Please Select --</option>
+                                          <option>In Progress</option>
+                                          <option>Failed</option>
+                                          <option>Scheduled</option>
+                                          <option>Completed</option>
+                                        </select></td>
+                                    </tr>
+                                     <tr class="odd">
+                                    	<th class="column1">Process ID:</th>
+                                        <td><input type="text" name="textfield" class=""  id="textfield" /></td>
+                                        <th class="column1">No. of records to display:</th>
+                                        <td><select name="vCriteria2" class="mandatory">
+                                          <option selected="selected">5</option>
+                                          <option>15</option>
+                                          <option>25</option>
+                                          <option>50</option>
+                                          <option>100</option>
+                                        </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                   	     <input name="CreateNew" class="primarybuttons" type="button" onclick="document.getElementById('searchdetails').style.display='';" value="Search" />
+                        </div>
+                        <table class="dataTable" id="searchdetails" style="display:none;">
+                                <thead>
+                                    <tr class="odd">
+                                        <th>Initiated By</th>
+                                        <th>Process Type</th>
+                                        <th>Process ID</th>
+                                        <th>Scheduled Date</th>
+                                        <th class="column1">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Afsal KH</td>
+                                      <td>Client Upload</td>
+                                      <td>5645454</td>
+                                      <td>02/10/10</td>
+                                        <td class="column1"><a href="DetailedLogScreen-InProgress.html">In Progress</a></td>
+                                    </tr>
+                                     <tr class="odd">
+                                        <td>Rahul Shivan</td>
+                                        <td>Sales Upload</td>
+                                        <td>5454554</td>
+                                        <td>10/10/10</td>
+                                      <td class="column1"><a href="DetailedLogScreen-Failed.html">Failed</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Meby Prakash</td>
+                                        <td>Client Upload</td>
+                                        <td>4454545</td>
+                                        <td>23/11/10</td>
+                                       <td class="column1"><a href="DetailedLogScreen-Scheduled.html">Scheduled</a></td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td>Hari S</td>
+                                        <td>Exclusion List Upload</td>
+                                        <td>6454545</td>
+                                        <td>18/12/10</td>
+                                       <td class="column1"><a href="DetailedLogScreen-Failed.html">Failed</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rupesh N</td>
+                                        <td>Sales Upload</td>
+                                        <td>6745854</td>
+                                        <td>20/12/10</td>
+                                        <td class="column1"><a href="DetailedLogScreen-Completed.html">Completed</a></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="6" align="right"><span class="pagination">Page: <a href="#" class="selected">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">Next</a></span></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">CIGNA.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Privacy statement</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--ì—ÏD½ŠqÀ¡h5†ãCÆ2¹ää%ÇKgãéwõÍFe7‚h’aO.ÂÔrn€q~BÐ¹mDìto^àv SŠÄìßlÖ)'ÔŒnø^4žÕÐhÓŒjéÍ×Ø[â¢H|h`!pÂ#tƒwK×Ä²9GÖ6jšÙ‘èñÈeQx32é;*e­À/n÷}­¡;ùêæ„ñÅøDèp)h€Üè	Äù6¥eÄøÊÀEÉ‘³E3Sf¨“bsæªð/h	Õm‚/,Ð.’c¾þóÀ+&XS8LöÙu²Ô)4?¢Ý“Ér)b¤s^¸³Ìøç+Žd¨mNa;æ¼û}¥~R®"]ßó¿-¿óÁK–8Í¸ö¾Ç½¯w¤ëñ’½A®5ýüïµºµÝ…÷C°næßƒGohÂ½pÑ³{ŸYÏºö¡“ÑÞvVb¿–2Þú0üQ”éJpßã~®9™j4uÚ@‚ïÈQ±__Œ’<OÕð"—¹5_c@´‘(z€€C¬ CßO|DÉîìZÉö£ûá¬”‹õ·o²ïNH™m2{§¶ êˆR)“øêˆêˆêˆ§UN©1tP^Æˆ êˆ-->

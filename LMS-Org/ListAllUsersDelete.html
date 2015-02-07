@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>AMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: Wen Chen | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/AMS_Logo.jpg" title="User Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/AMS_Logo_S.jpg" title="AMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone">
+					</span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+                    	<ul>
+							<li>User Management
+								<ul>
+									<li><a href="ListAllUsers.html">View User </a></li>
+									<li><a href="CreateUser.html">Add User </a></li>
+								</ul>
+							</li>
+						</ul>
+                    </div>
+
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> Admin</a> <a href="#">User Management</a>View Users</p>
+                        <span class="success" style="display:block;">User has been deleted Succesfully</span>
+                        <h1>List All Users</h1>
+                    	<p>
+                        	This page is for users to list all user information..
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                        	<table class="dataTable">
+                                <thead>
+                                    <tr class="odd">
+                                        <th class="column1"></th>
+                                        <th>User ID</th>
+                                        <th>Name</th>
+                                        <th>Flat</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th class="column1">&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th class="column1" width="30px"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                      <td>USERGA</td>
+                                        <td>Wen  Chen </td>
+                                        <td>Flat GA </td>
+                                        <td>wen.chen@yahoo.com</td>
+                                        <td>Administrator</td>
+                                        <td class="column1"><a href="UserDetails.html">Details</a></td>
+                                    </tr>
+                                     <tr class="odd">
+                                         <th class="column1"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                       <td>USERGB</td>
+                                        <td>Zhi  Lin </td>
+                                        <td>Flat GB </td>
+                                        <td>zhi.lin@yahoo.com</td>
+                                        <td>Secretary</td>
+                                        <td class="column1"><a href="UserDetails.html">Details</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="column1"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                      <td>USER1A</td>
+                                        <td>Ming  Wu </td>
+                                        <td>Flat 1A </td>
+                                        <td>ming.wu@yahoo.com</td>
+                                        <td>President</td>
+                                        <td class="column1"><a href="UserDetails.html">Details</a></td>
+                                    </tr>
+                                     <tr class="odd">
+                                         <th class="column1"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                       <td>USER1B</td>
+                                        <td>Hui  Zhang </td>
+                                        <td>Flat 1B </td>
+                                        <td>hui.zhang@yahoo.com</td>
+                                        <td>Owner</td>
+                                        <td class="column1"><a href="UserDetails.html">Details</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="column1"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                      <td>USER2A</td>
+                                        <td>Yi  Cai</td>
+                                        <td>Flat 2A </td>
+                                        <td>yi.cai@yahoo.com</td>
+                                        <td>Treasurer</td>
+                                        <td class="column1"><a href="UserDetails.html">Details</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th class="column1"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                      <td>USER2B</td>
+                                        <td>John  Cai</td>
+                                        <td>Flat @B </td>
+                                        <td>John.John@yahoo.com</td>
+                                        <td>Security</td>
+                                        <td class="column1"><a href="UserDetails.html">Details</a></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="7" align="right"><span class="pagination">Page: <a href="#" class="selected">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">Next</a></span></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                       	<input name="CreateNew" type="button" class="primarybuttonl" onclick="MM_goToURL('parent','CreateUser.html');return document.MM_returnValue" value="Create New" />
+                              <input name="CreateNew" type="button" class="primarybuttonm" onclick="MM_goToURL('parent','EditUser.html');return document.MM_returnValue" value="Edit" />
+                          <input name="CreateNew" class="primarybuttons" type="button" value="Delete" onclick="cnfrmtn=confirm('Do you want to delete this user?');if(cnfrmtn){window.location='ListAllUsersDelete.html';}" />
+                         </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">ABC.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--þ…µÈAæ‘oè[s©GÞV(„ÓÈ>±q÷.•U-Ë¾p×ÎûÁº»ø-£Ñ6aÆ’5’À¸St¹×?dwQ®»à€¾¦‚»FiÓ&¥gŠªCŽÞPÌ3SÙÈ[¾&PN¼„WøÊ‹ÐV•Hh%›3yk8qrÚŒ/Î§ñKâKj·2H›¼J¼pú~Ò`¹WàòÔ‡Ez*C»bEj¢ãNú%çc¡M˜»VH15mgq:ÀÖÕ½å/ü/\. Dà»èÈŒ"ôøf‰c(ñÓ^ñQ™æ¯sÝ¡rÆ77Žúu¾Ñ©èÅ$«e—k8ZÞˆ•ß}‹ll YGµ$fþ+“L¸ž?¬g.Š&)»$›î»Ù#H€ýæ™P}ÛákU§LT
+-ìÐqþˆg\‚vRz1c%`PÇòÐ êˆR)“øêˆêˆêˆ§UN¦1tPmÎˆ êˆ-->

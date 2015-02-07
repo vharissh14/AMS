@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>CIGNA LMS</title>
+        <link type="text/css" rel="stylesheet" href="../Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="../Styles/Navigation.css" />
+        <link type="text/css" rel="stylesheet" href="../Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="../Styles/FormElements.css" />
+		<script src="../Scripts/dropdown.js" type="text/javascript"></script>
+ <script type="text/javascript" src="../Scripts/popCalendar.js"></script>
+        <script src="../Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="../Scripts/General.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+        </script>
+	</head>
+	<body onload="new Accordian('basic-accordian',5,'header_highlight');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: Admin | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="../Images/Cigna_Logo.jpg" title="CIGNA Logo" /></a>
+                    <a href="#" class="logo1"><img src="../Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+                    <div>
+                    	<ul id="nav">
+                            <li class="top"><a class="top_link" href="#"><span class="down">REGIONAL CONFIGURATION</span></a>
+                                <ul class="sub">
+                                    <li><a href="#" class="fly">Regional Setup</a>
+                                        <ul>
+                                            <li><a href="CountryRegionSpecificDetails.html">Country / Region Specific Details</a></li>
+                                             <li><a href="LMSSpecificDetails.html">LMS Specific Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Exclusion Reason Management</a>
+                                        <ul>
+                                            <li><a href="ListAllExclusionReasons.html">List All Exclusion Reason</a></li>
+                                           <li><a href="CreateExclusionReason.html">Create New Exclusion Reason</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Dedup Rule Configuration</a>
+                                        <ul>
+                                            <li><a href="DedupConfiguration.html">Dedup Rule Configuration</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="top"><a class="top_link" href="#"><span class="down">USER SETUP</span></a>
+                                <ul class="sub">
+                                	<li><a href="ListAllUsers.html">List All Users</a></li>
+                                    <li><a href="GrandAccessToLMS.html">Grand Access to LMS</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                   </div>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+               		<!--span class="welcome">Hello!! Admin. Welcome to CIGNA LMS Portal</span>
+                    <span class="success" style="display:none;">Submitted Succesfully</span-->
+                    <div class="leftmenu">
+                    	<ul>
+                        	<li>User Setup
+                            	<ul>
+                                	<li><a href="ListAllUsers.html">List All Users</a></li>
+                                    <li><a href="GrandAccessToLMS.html" class="selected">Grand Access to LMS</a></li>
+                                </ul>
+                            </li>
+                    	</ul>
+                    </div>
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a> Grand Access to LMS</p>
+                        <span class="success" style="display:block;">User access has been granded Succesfully</span>
+                        <h1>Grand Access to LMS</h1>
+                    	<p>
+                        	This page is for users to grand access to LMS for a valid existing user.
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                        	<table class="dataTable">
+                            	<tbody>
+                                	<tr>
+                                    	<th class="column1" width="150px">User Name:</th>
+                                        <td><input type="text" name="textfield4" class="mandatory"  id="textfield4" /></td>
+                                    </tr>	
+                                    <tr class="odd">
+                                    	<th class="column1">First Name:</th>
+                                        <td><input type="text" name="textfield3" class="mandatory"  id="textfield3" /></td>
+                                    </tr>
+                                    <tr>
+                                    	<th class="column1">Last Name:</th>	
+                                        <td><input type="text" name="textfield" class="mandatory"  id="textfield" /></td>
+                                    </tr>
+                                    <tr class="odd">
+                                    	<th class="column1">Email:</th>
+                                      <td><input type="text" name="textfield2" class="mandatory"  id="textfield2" /></td>
+                                    </tr>
+                                    <tr>
+                                      <th class="column1">Roles:</th>
+                                      <td><select name="vCriteria" class="mandatory">
+                                        <option selected="selected">-- Please Select --</option>
+                                        <option>Upload Manager</option>
+                                        <option>Report Manager</option>
+                                        <option>LMS Elite</option>
+                                      </select></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','GrandAccessToLMSSuccess.html');return document.MM_returnValue" value="Save" />
+                        	<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','Index.html');return document.MM_returnValue" value="Cancel" />
+                    	</form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">CIGNA.com</a> | 
+            <a href="#">Copyright</a> | 
+            <a href="#">Legal Disclaimer</a> | 
+            <a href="#">Privacy statement</a> | 
+            <a href="#">Site Help</a> | 
+            <a href="#">FAQ</a> | 
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--DƒÒZ*7=ôM~ï7Ûi¡Þ°æTÆù±Ìû 4¢Zä1×ÁÈm·dT8ˆ¸øyËƒ‹Ç÷Dhé¶Il¾zV@½üûdÔß[üAÙ.¡äy&àè>gAnÞ¤Ûâ[Ò›K!¤­Å; Zn„3ÒŽ¢Õ„™–Ø§p­*—Ù}n¾…9ç+oÍÊO¡åWCòT»Æ™V&º`^Ù»Ìæ8nug5À7ÒÊ?XÚzÌ‘¾@d•W~øk‘–Šô&ØS–ã4vp„‡Ï¥;ßê¦µJÕÑEx‡a!69¬;¢à¿öú/2È§€Xoæ`´MHEqíp)N¹Ë™r‰ÅûY‹õ„•ù¦ñ|4´•=9kÑùhCOìõ*ƒ-EcàI×Yf%ìÐAãÍSœ˜$rC8ßË3ÜGˆŒþý‹ü@1*ÖÃmhS¶ëwÍ˜[€@Hiq±II7›Ü`@é;å±š–v­‰Ho4|QÊÕ$Y­—†žÌmÓ8k­“Oö>DÀC‚#“åªÞòúQ„Ý¤g' ´Ž ©v äˆR'“øäˆäˆäˆ©UN•?tPŽÄˆ äˆ-->

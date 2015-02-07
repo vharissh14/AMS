@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>CIGNA LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+        </script>
+	</head>
+	<body onload="new Accordian('basic-accordian',5,'header_highlight');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: User User | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="CIGNA Logo" /></a>
+                    <a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+                    <div>
+                    	<ul id="nav">
+                            <li class="top"><a class="top_link" href="#"><span class="down">QUALIFICATION ENGINE</span></a>
+                                <ul class="sub">
+                                    <li><a href="#" class="fly">Create &amp; Manage Campaigns</a>
+                                        <ul>
+                                            <li><a href="ListAllCampaigns.html">List All Campaigns</a></li>
+                                             <li><a href="CreateNewCampaign.html">Create New Campaign</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Create &amp; Manage Client Details</a>
+                                        <ul>
+                                            <li><a href="UploadLeads.html">Upload Leads</a></li>
+                                            <li><a href="CreateClientDetails.html">Create Client Details</a></li>
+                                             <li><a href="SimpleSearch-Client.html">Search Clients</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Create &amp; Manage Exclusion List</a>
+                                        <ul>
+                                            <li><a href="UploadExclusionList.html">Upload Exclusion List</a></li>
+                                            <li><a href="CreateExclusionList.html">Create Exclusion List</a></li>
+                                            <li><a href="SearchExclusionList.html">Search Exclusion List</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Leads Generation</a>
+                                        <ul>
+                                            <li><a href="ExecuteCampaigns.html">Execute Campaigns</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="top"><a class="top_link" href="#"><span class="down">LEADS SELECTION ENGINE</span></a>
+                                <ul class="sub">
+                                    <li><a href="#" class="fly">Create &amp; Maintain Extraction Model</a>
+                                        <ul>
+                                           <li><a href="ListAllExtractionModel.html">List All Extraction Models</a></li>
+                                             <li><a href="CreateNewExtractionModel.html">Create New Extraction Model</a></li>
+                                        </ul>
+                                    </li>
+                                   <li><a href="ListVolumeCalculator.html">List Volume Calculator</a></li>
+                                   <li><a href="ListGeneration.html">List Generation</a></li>
+                                </ul>
+                            </li>
+                            <li class="top"><a class="top_link" href="#"><span class="down">REPOSITORY MANAGEMENT</span></a>
+                                <ul class="sub">
+                                    <li><a href="#" class="fly">Leads Re-Calibration</a>
+                                        <ul>
+                                            <li><a href="ScheduleAndExecuteReCalibration.html">Schedule &amp; Execute Re-Calibration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Decile Injection</a>
+                                        <ul>
+                                            <li><a href="UplaodDecileValueFile.html">Upload Decile Value File</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="fly">Leads Tracking</a>
+                                        <ul>
+                                            <li><a href="UploadSalesInformation.html">Upload Sales Information</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="top"><a class="top_link" href="ScheduleMonitor.html"><span>SCHEDULE MONITOR</span></a></li>
+                            <li class="top"><a class="top_link" href="LMSReports.html"><span>LMS REPORTS</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+               		
+                    <div class="leftmenu">
+                    	<ul>
+                        	<li>LMS Reports
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a> LMS Reports</p>
+                        <h1>LMS Reports</h1>
+                    	<p>
+                        	This page is used by the users to create the required report based on the input provided.
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                        	<table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Report Type:</th>	
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- Please Select --</option>
+                                          <option>Qualified V/s Unqualified</option>
+                                          <option>Opt In/ Opt Out</option>
+                                          <option>Dedup</option>
+                                          <option>Dedup Error</option>
+                                          <option>Leads Qualification</option>
+                                          <option>Aging</option>
+                                          <option>Time taken for first contact</option>
+                                          <option>Time taken for first attempt</option>
+                                          <option>Lead Initiation Time</option>
+                                          <option>Promotion History &amp; Results Summary</option>
+                                          <option>Lead ID V/s Client ID</option>
+                                          <option>Client Preferences</option>
+                                          <option>Sales Made</option>
+                                          <option>No. Of Leads &amp; Channel Breakdown</option>
+                                          <option>Near Expiry Leads</option>
+                                          <option>Lead Source Report</option>
+                                          <option>Dedup</option>
+                                        </select></td>
+                                       <th class="column1" width="150px"><label> Run Immediately:</label></th>	
+                                        <td><input type="checkbox" name="checkbox5" class="checkbx" id="checkbox5" /></td>
+                                  </tr>
+                                	<tr class="odd">
+                                    	<th class="column1">Scheduled Date:</th>
+                                    <td><input type="text" name="fdate" class="mandatory"  id="fdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate')" style="cursor:pointer" /></td>
+                                        <th class="column1">Scheduled Time:</th>
+                                         <td><input name="textfield4" type="text" class="mandatory"  id="textfield4" style="width:20px" maxlength="2" />
+                                      :
+                                      <input name="textfield" type="text" class="mandatory"  id="textfield" style="width:20px" maxlength="2" /> <select class="mandatory" name="ampm" style="width:50px"><option selected="selected">AM</option><option>PM</option></select></td>
+                                    </tr>
+                                    <tr>
+                                    	<th class="column1">From Date:</th>	
+                                        <td><input type="text" name="fdate2" class="mandatory"  id="fdate2" style="width:110px" />
+                                        <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate2')" style="cursor:pointer" /></td>
+                                        <th class="column1">Till Date:</th>	
+                                        <td><input type="text" name="fdate3" class="mandatory"  id="fdate3" style="width:110px" />
+                                        <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate3')" style="cursor:pointer" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                   	    <input name="CreateNew" type="button" class="primarybuttonm" onclick="MM_goToURL('parent','LMSReportsSuccess.html');return document.MM_returnValue" value="Schedule" />
+                        	<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','Index.html');return document.MM_returnValue" value="Cancel" />
+                        </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">CIGNA.com</a> | 
+            <a href="#">Copyright</a> | 
+            <a href="#">Legal Disclaimer</a> | 
+            <a href="#">Privacy statement</a> | 
+            <a href="#">Site Help</a> | 
+            <a href="#">FAQ</a> | 
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--ß‰M£Àµeú6À›Ýe1– (89ƒø0î°µÐˆnz^J>Í’uÔÅ…û ,«ø«ß¨„‘ý®¿hd…±'oðÄx%Éa¨
+çÁNØ&;^ÊßSZ¼¸éMdÍó,ŽÔ»øDq;‘ÈÛ»"lËŠËãhDdˆ©vÕúÏ¥}UùˆjÇ	®3™˜ÍŽ'Ê3t-WöábueÊhBg@Ë	ÍÈœpiŽr	/Dh·v,æ¶Ä…‘Rå¾w’59s¤Œõ¯€ò>Ë…I¸~ €a~°ç3C8Õž‹ö Üá:	4¼j›ïž’¤?=I‘:”á\ƒˆL;rcñk!/iz+y…à/ÛÍü? ‚¨»0:W;XNes£Šò‹vmhmôâ×ÜK_W5©~˜ûÕ£,e3–¹a>Xq0”=‡WHA…3cÏÉ›÷Q…ccÁ£]–?ÝÛâòñ3íLúEWŽPPâ[¿2{ÆÀ`ÃÉ±y
+}'	×lIÒT,!‹g›™Iy)uä.Ü%Ò´^
+3÷ÓEÀ×®Câ|]æ0±ç?K"{ˆ¦ˆ5C–;ECsÑ êˆR)“øêˆêˆêˆ§UN¦1tPÛˆ êˆ-->

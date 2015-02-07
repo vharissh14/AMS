@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+					    <ul>
+							<li>Partners
+								<ul>
+									<li><a href="ListAllPartners.html">View Partners</a></li>
+									<li><a href="CreatePartner.html">Add Partners</a></li>
+								</ul>
+							</li>
+						</ul>
+
+                    </div>
+
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> PARTNERS</a> <a href="#"> Manage Partners</a> View Partners</p>
+                        <h1>List All Partners</h1>
+                    	<p>
+                        	This page is for users to see all the Partners.
+                      </p>
+                        <form id="form1" name="form1" method="post" action="">
+                            <div class="tabcontent">
+                            <table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Partner Category:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Main</option>
+                                          <option>Branch</option>
+                                        </select></td>
+                                    	<th class="column1" width="150px">Partner Type:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Equity Partner</option>
+                                          <option>Working Partner</option>
+                                          <option>Bussiness Partner</option>
+                                          <option>Limited Liability Partner</option>
+										   <option>Limited  Partner</option>
+                                        </select></td>
+
+                                  </tr>
+                                	<tr class="odd">
+                                    	<th class="column1">Contract From Date:</th>
+                                    <td><input type="text" name="fdate" class="mandatory"  id="fdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate')" style="cursor:pointer" /></td>
+                                        <th class="column1" width="150px">Contract To Date:</th>
+                                      <td><input type="text" name="tdate" class="mandatory"  id="tdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('tdate')" style="cursor:pointer" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                   	     <input name="CreateNew" class="primarybuttons" type="button" onclick="document.getElementById('searchdetails').style.display='';" value="Submit" />
+                        </div>
+                        <table class="dataTable" >
+
+								<table  class="dataTable" id="searchdetails" style="display:none;">
+                                <thead>
+                                    <tr class="odd">
+                                        <th class="column1">Partner ID</th>
+										<th>Partner Name</th>
+                                        <th>Partner Category</th>
+                                        <th>Partner Type</th>
+                                        <th>Contract From Date</th>
+                                        <th>Contract To Date</th>
+										<th class="column1"></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>PART11</td>
+                                        <td>Raja Ram</td>
+                                        <td>Branch</td>
+                                        <td>Equity Partner</td>
+                                        <td>14/06/2011</td>
+                                        <td>14/06/2012</td>
+										<td class="column1"><a href="PartnerDetails.html">Details</a></td>
+                                    </tr>
+                                     <tr class="odd">
+                                        <td>PART12</td>
+                                        <td>Raja Ravi</td>
+                                        <td>Head</td>
+                                        <td>Bussiness Partner</td>
+                                        <td>14/06/2011</td>
+                                        <td>14/06/2012</td>
+										<td class="column1"><a href="PartnerDetails.html">Details</a></td>
+
+                                    </tr>
+                                    <tr>
+                                       <td>PART13</td>
+                                        <td>Mohan Raj</td>
+                                        <td>Branch</td>
+                                        <td>Working Partner</td>
+                                        <td>14/06/2011</td>
+                                        <td>14/06/2012</td>
+										<td class="column1"><a href="PartnerDetails.html">Details</a></td>
+
+                                    </tr>
+
+                                    <tr>
+
+                                    </tr>
+
+                                    <tfoot>
+
+                                    </tfoot>
+                                </tbody>
+								 </table>
+
+                         </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--cÚ^ÄÀî;Õ≥(Î¸NæLy√æ?æ“LÒ3€) Lqd¢˙(l£ ±õ€3®∑{ÆËƒ˜nÊa`ÕÌüØh0‡o∏?{Ô¸Öç1ù¬ﬂËÏ±€l)(OÛîFÜ`Ú∂=?›ú„÷÷%J%√è †ê`H_lπ˛*9Ó°àZz6ù√∆ˆhé¡ΩÁ‰C8¢$©T1èÊ†∏$º)ÑÄnÒ|S[Ø±ä+™˚ßÁ—£UxJ3 ∂ E°ıÚºni"U\›@ù_CKÌ˙2[>£˚!À∑†@¡.yj√rñÈ‰0geäG°∫p¢⁄∂HÛºJfÃ|.R-/C7¶çËŸ"áKóÑH@ÃÊ˛ºµ&6\£[¿JπÓã‚t<¿[∞*@Õ?¡≠zÑÕŒŸ1‰2eeƒ˙…˜
+˚,ªﬂŸ˙ŒæZÑ\b∑0FD¿va1¿h Ü9ö≤ñ4EÀ2£¯!O≈}í0≠ÓB^áaÒ‡ló∏Tpé>«ÌÀ~ªcû ÍàR)ì¯ÍàÍàÍàßUN°1tPªÀà Íà-->

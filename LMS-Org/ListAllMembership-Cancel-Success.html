@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone">
+					</span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+                    	<ul>
+                    	<li><a href="#" class="fly">Manage Membership</a>
+                                 <ul>
+									<li><a href="ListAllMembership-Renew.html">Renew Membership</a></li>
+									<li><a href="ListAllMembership-Cancel.html">Cancel Membership</a></li></li>
+								</ul>
+							</li>
+						</ul>
+                    </div>
+
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> Members</a> <a href="#">Manage Membership</a>Cancel Membership</p>
+                        <span class="success" style="display:block;">Cancelled the membership Successfully</span>
+                        <h1>Cancel Membership</h1>
+                    	<p>
+                        	This page is for users to cancel membership.
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                            <div class="tabcontent">
+                            <table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Membership Type:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Platinum</option>
+                                          <option>Gold</option>
+                                          <option>Sliver</option>
+                                          <option>Bronze</option>
+                                        </select></td>
+                                    	<th class="column1" width="150px">Status:</th>
+                                        <td><select name="vCriteria2" class="">
+
+                                          <option selected="selected">-- All --</option>
+                                          <option>Active</option>
+                                          <option>Canceled</option>
+                                          <option>Expired</option>
+                                          <option>Pending</option>
+                                        </select></td>
+									</tr>
+									<tr>
+                                    	<th class="column1" width="150px">Payment Method:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Monthly</option>
+                                          <option>Quarterly</option>
+                                          <option>Semi Annual</option>
+                                          <option>Annual</option>
+                                          <option>Life Time</option>
+                                        </select></td>
+                                        <th class="column1" width="150px">Member ID:</th>
+										<td><input type="text" name="textfield6" class=""  id="textfield6" /></td>
+                                  </tr>
+
+                                </tbody>
+                            </table>
+                   	     <input name="CreateNew" class="primarybuttons" type="button" onclick="document.getElementById('searchdetails').style.display='';" value="Submit" />
+                        </div>
+                        <table class="dataTable" >
+
+                        <table class="dataTable" id="searchdetails" style="display:none;">
+                                <thead>
+                                    <tr class="odd">
+                                    	<th></th>
+                                    	<th>Name</th>
+                                        <th>Member ID</th>
+                                        <th>Member Card #</th>
+                                        <th>Fee</th>
+                                        <th>Expiry Date</th>
+                                        <th class="column1">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd">
+                                    	<th class="column1" width="30px"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                        <td>Mr. Wen  Chen </td>
+                                        <td>MEM001</td>
+                                        <td>00910510012300</td>
+                                        <td>1999.00</td>
+                                        <td class="column1">12-Sep-2011</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                    	<th class="column1" width="30px"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                        <td>Miss. Zhi  Lin</td>
+                                        <td>MEM121</td>
+                                        <td>00910510012201</td>
+                                        <td>2123.00</td>
+                                        <td class="column1">31-Aug-2011</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr class="odd">
+                                    	<th class="column1" width="30px"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                        <td>Mr. Ming  Wu</td>
+                                        <td>MEM433</td>
+                                        <td>00910510012512</td>
+                                        <td>533.00</td>
+                                        <td class="column1">29-Sep-2011</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                    	<th class="column1" width="30px"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                        <td>Mr. Hui  Zhang</td>
+                                        <td>MEM511</td>
+                                        <td>00910510012638</td>
+                                        <td>6923.00</td>
+                                        <td class="column1">01-Aug-2011</td>
+                                        <td>Cancelled</td>
+                                    </tr>
+                                    <tr class="odd">
+                                    	<th class="column1" width="30px"> <input type="radio" name="radio" id="radio" class="radiobtn" value="radio" /></th>
+                                        <td>Mr. Hui  Zhang</td>
+                                        <td>MEM777</td>
+                                        <td>00910510012759</td>
+                                        <td>918.00</td>
+                                        <td class="column1">12-Aug-2011</td>
+                                        <td>Expired</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="7" align="right"><span class="pagination">Page: <a href="#" class="selected">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">Next</a></span></td>
+                                    </tr>
+                                </tfoot>
+								<tr>
+									<td colspan="7" align="right">
+									<input name="Back" type="button" class="primarybuttons" onclick="MM_goToURL('parent','Index.html');return document.MM_returnValue" value="Back" />
+									<input name="CreateNew" type="button" class="primarybuttons" value="Cancel" onclick="cnfrmtn=confirm('Do you want to Cancel this Memebership?');if(cnfrmtn){window.location='Cancel-Membership.html';}" />
+									</td>
+								</tr>
+                          </table>
+                         </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--Ñ­ÍÏàè+ÈåømÂ!øýÎ/e—Ž"P‚ª]3,Ø¤éÔÏn!ÅÙ—n$I¥J‹šÂÈN(úþÑË
+vlRyC%”N'¦õ¾}}™¤!\à;œüŠ†.BÖÚ¶áWù”ŠÆ
+´­Š-x5Z[ßn“œ’ä±Wâë9å
+Œ®–øÝwÏcM('tÄ:/Á—“Pƒ~oS"ÎÛ‚Kè×p†¼i¯Ç/Ë	¨c¥#‡®Ñz³ˆñ,‘þ“¦H[® þ[‹‡6»Ñ4êmÆjÝJý+®wW:T¸ŸBb4ÕXv?ØMLF®,]ZÉÄWä h6¯B_<Èò’¾ï&BýÚ93»ÝH½©GÉ0‰X*ÍÀuŽþ¨ea<gê±aeBhžÇðSãù#_æéëoÌ©KacÆª“"¹Ù5µ‡z%2 
+4„uÊŽô£A
+4Ž9PV=ôûq¶[92LC/68s¦ÓÓfP˜Ñv@ƒ³Y¼ð`îhŒúçÊ	à·Ù¨DXs_A)Û2‘c¹BD‘ÉBdÚfÆp¡™œŠßÜ—Ó¯¹)y‰ÙPù&iÇKs;l_Ë«zµy©|ü8pÊ^Å'ÎC*‰9¨ñÊÝ¸>Í’XŒFr«½UÎ êˆR)“øêˆêˆêˆ§UN¡1tPãÁˆ êˆ-->

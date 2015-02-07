@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+					    <ul>
+							<li>Enquiry
+								<ul>
+									<li><a href="ListAllRewards.html">View Rewards</a></li>
+									<li><a href="ListAllRedemptions.html">View Redemptions</a></li>
+									<li><a href="ListAllTransactions.html">View Transactions</a></li>
+									<li><a href="CreateRewards.html">Add Rewards</a></li>
+									<li><a href="CreateRedemption.html">Add Redemption</a></li>
+									<li><a href="CreateTrans.html">Add Transaction</a></li>
+								</ul>
+							</li>
+						</ul>
+
+                    </div>
+
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> REDEMPTIONS</a> <a href="#"> Enquiry</a> View Transactions</p>
+                    	<span class="success" style="display:block;">Added the Transaction Successfully</span>
+                        <h1>List All Transactions</h1>
+                    	<p>
+                        	This page is for users to see all the Transactions.
+                      </p>
+                        <form id="form1" name="form1" method="post" action="">
+                            <div class="tabcontent">
+                            <table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Transaction ID:</th>
+	                                    <td><input type="text" Value = "" name="textfield6" class=""  id="textfield6" /></td>
+                                    	<th class="column1" width="150px">Transactions Type:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Cash</option>
+                                          <option>Credit Card</option>
+                                          <option>Debit Card</option>
+                                          <option>cheque</option>
+                                        </select></td>
+
+                                  </tr>
+                                	<tr class="odd">
+                                    	<th class="column1">From Date:</th>
+                                    <td><input type="text" name="fdate" class="mandatory"  id="fdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate')" style="cursor:pointer" /></td>
+                                        <th class="column1" width="150px">To Date:</th>
+                                      <td><input type="text" name="tdate" class="mandatory"  id="tdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('tdate')" style="cursor:pointer" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                   	     <input name="CreateNew" class="primarybuttons" type="button" onclick="document.getElementById('searchdetails').style.display='';" value="Submit" />
+                        </div>
+                        <table class="dataTable" >
+
+								<table  class="dataTable" id="searchdetails" style="display:none;">
+                                <thead>
+                                    <tr class="odd">
+                                        <th class="column1">Transaction ID</th>
+                                        <th>Transactions Description</th>
+                                        <th>Transactions Date</th>
+                                        <th>Transactions Type</th>
+                                        <th>Transactions Value</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>TRANS11</td>
+                                        <td>Holiday Hotel Stay</td>
+                                        <td>14/06/2011</td>
+                                        <td>Cash</td>
+                                        <td>5000.00</td>
+
+                                    </tr>
+                                     <tr class="odd">
+                                        <td>TRANS12</td>
+                                        <td>Execute Room Usage</td>
+                                        <td>14/06/2011</td>
+                                        <td>Credit Card</td>
+                                        <td>13000.00</td>
+
+                                    </tr>
+                                    <tr>
+                                       <td>TRANS13</td>
+                                        <td>Hotel Dining</td>
+                                        <td>14/06/2011</td>
+                                        <td>Cheque</td>
+                                        <td>1200.00</td>
+
+                                    </tr>
+
+                                    <tr>
+                                    	<td colspan="5">
+                        					<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','Index.html');return document.MM_returnValue" value="Back" />
+                                    	</td>
+                                    </tr>
+
+                                    <tfoot>
+
+                                    </tfoot>
+                                </tbody>
+								 </table>
+                         </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--ûóÈ1»ïòˆ0‘šU
+.H‚Ãtê’GIæ¯zV‡ÝÓÊÐØ¼åíð…°zqtõæƒòØvA.NYÜñ²sÆðâ@RãåÅÝÞTñ&3Ò•D˜é=q7z5s u®9Èo) ¨êf¯­‡Ù™}Ò!Ï8ÌÊ=,„”
+*»þüo¾°Á†%Ÿ–8×ÂˆPs8¾d(úôÝvlE‚Ô—<ZïŸ Ë„÷‰ÂæßyHáÅ¤/Ëwô¿°ð€{{%ý.¢§â†/eÐ"3ì|6Žï-æ61±T\“d©6È¤¨ñlù I†*°×ÞÄÃ’rš@ÄÎávÑ¶²ÎYEÕB„òL‰l&4ßßu)Fu—úÛ]ÚÌdðUàÞ¡¬?«¡<~”¼õîÒHàÙãÅ‘~ZÐ-VnÂèw< ÄØº÷j„"/Pjü÷_DÖföe±¶}/mñÖìÁþ¨G‡ÆW£}ü„»~wSTÃ?¸À°DC"fD€DCý€³„¬!`6)M¬¨)×pÁû²Á.“rD+JPÄÓsG¡é#78OR<.¦Ä^¿â)	† êˆR)“øêˆêˆêˆ§UN¥1tP?Ëˆ êˆ-->

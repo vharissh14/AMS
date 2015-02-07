@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+                    	<ul>
+                        	<li>Transactions
+                            	<ul>
+									<li><a href="View-Rewards.html">Customer Rewards</a></li>
+									<li><a href="View-Redemption.html">Customer Redemptions</a></li>
+									<li><a href="View-Redemption-Partner.html">Partner Redemptions</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> REDEMPTIONS</a> <a href="#"> Transactions</a> Customer Rewards</p>
+                    	<span class="success" style="display:block;">Canceled the transaction Successfully</span>
+                        <h1>Rewards Details</h1>
+                    	<p>
+                        	This page is for users to see customers rewards details.
+                      </p>
+                        <form id="form1" name="form1" method="post" action="">
+                        	 <ul id="tabnav">
+                            	<li class="selected">Rewards</li>
+                            </ul>
+                            <div class="tabcontent">
+                            <table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Rewards Type:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Points</option>
+                                          <option>Coupons</option>
+                                          <option>Vouchers</option>
+                                          <option>Products</option>
+                                          <option>Cash Accumulation</option>
+                                        </select></td>
+                                        <th colspan="2" class="column1">&nbsp;</th>
+                                  </tr>
+                                	<tr class="odd">
+                                    	<th class="column1">From Date:</th>
+                                    <td><input type="text" name="fdate" class="mandatory"  id="fdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate')" style="cursor:pointer" /></td>
+                                        <th class="column1" width="150px">To Date:</th>
+                                      <td><input type="text" name="tdate" class="mandatory"  id="tdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('tdate')" style="cursor:pointer" /></td>
+                                    </tr>
+                                	<tr>
+                                    	<th class="column1" width="150px">Member Name:</th>
+                                    <td><input type="text" name="textfield6" class=""  id="textfield6" /></td>
+                                        <th class="column1" width="150px">Member Card Number:</th>
+                                      <td><input type="text" name="textfield3" class=""  id="textfield3" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                   	     <input name="CreateNew" class="primarybuttons" type="button" onclick="document.getElementById('searchdetails').style.display='';" value="Submit" />
+                        </div>
+                        <table class="dataTable" >
+                                <thead>
+                                    <tr class="odd">
+                                        <th >Summary</th>
+                                    </tr>
+                                </thead>
+								<table  class="dataTable" id="searchdetails" style="display:none;">
+										<thead>
+											<tr class="odd">
+												<th >Rewards Type</th>
+												<th class="column1">Total</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+											  <td><a href="View-Rewards-Trans.html">Points</a></td>
+											  <td>2252</td>
+
+											</tr>
+											 <tr class="odd">
+												<td><a href="#">Coupons</a></td>
+												<td>3</td>
+
+											</tr>
+											<tr>
+												<td><a href="#">Vouchers</a></td>
+												<td>5</td>
+
+											</tr>
+											<tr class="odd">
+												<td><a href="#">Products</a></td>
+												<td>2</td>
+
+											</tr>
+											<tr>
+												<td><a href="#">Cash Accumulation</a></td>
+												<td>1532.00</td>
+
+											</tr>
+										</tbody>
+
+								</table>
+                            </table>
+                        </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Privacy statement</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--ŸRHZÆ;‚äåÜ'6)›|µé³×XŠÔï3¨f!Šç>”·ršcVK	}d^¤aîåÆÅm&îÄüe×æ$ ƒî|…]Šğ]æäÛ1ÃSµ®Ï/ûÀÏü}å*ÚmºÉ{ª?òÛÙ¶Ü=Hªªù«Ä2Ø‹Ö¶;Xs®‰„révmô‰eB•ïîpW`à]ˆ"~'Öt¿Òİ‡àÙCJ/cÍGƒØ”“@óŸ“Pòcô|1ú]0.k_í…€Hß™JØ·QM" §px¦¤Ã-Øë…C„VxÌN¾ã9föù„ÛåµÓ6X{(RŞ¬	’7ê„-„ãŒ×!}”(ëØ¹c4ü°ÇºùÔh¶ıskhoK;@º×„Šüæ&$ºâ	DúmGj¦ß¿X8rc9\ÈÏê™')÷y÷&á\ÍÆ%nÀo—÷Yè’£çÑ'(< k!ÜMÆB44©ù’•ê‘šK›Ô|¯º] êˆR)“øêˆêˆêˆ§UN«1tPôˆ êˆ-->

@@ -1,0 +1,122 @@
+@charset "utf-8";
+/******************************************************************************/
+/* Styles used for form elements                                                   */
+/*                                                                            */
+/*   Forms should only use styles in this section.                         */
+/*   They should not use any of the styles defined in other sections.         */
+/******************************************************************************/
+
+input,textarea
+{
+	border: 1px solid #999999;
+	width: 150px;
+	font-size: 11px;
+	color: #666666;
+	word-wrap: break-word;
+}
+select
+{
+	border: 1px solid #999999;
+	padding:auto !important;
+	color: #666666;
+	width:158px;
+	font-size:11px;
+}
+option,input,textarea
+{
+	padding:0px 3px;
+	#padding:2px 3px;
+}
+
+input.primarybuttonel,input.primarybuttonl,input.primarybuttonm,input.primarybuttons,input.secondarybuttonm
+{
+	height:17px;
+	float:right;
+	font-weight:bold;
+	margin-right:10px;
+	padding:0 0 3px 0 !important;
+	#padding:0px !important;
+	cursor:pointer;
+	margin-top:10px;
+	border:none;
+	font-size:10px;
+}
+input.primarybuttonel
+{
+	width:110px !important;
+}
+input.primarybuttonel:hover
+{
+	width:110px !important;
+}
+input.primarybuttonl
+{
+	width:90px !important;
+}
+input.primarybuttonl:hover
+{
+	width:90px !important;
+}
+input.primarybuttonm
+{
+	width:74px !important;
+}
+input.primarybuttonm:hover
+{
+	width:74px !important;
+}
+input.secondarybuttonm
+{
+	width:110px !important;
+	margin:0 !important;
+	float:none !important;
+}
+input.secondarybuttonm:hover
+{
+	width:110px !important;
+}
+input.primarybuttons
+{
+	width:63px !important;	
+}
+input.primarybuttons:hover
+{
+	width:63px !important;	
+}
+input.radiobtn,input.checkbx,#basic-accordian input.radiobtn,#basic-accordian input.checkbx
+{
+	width:auto;
+	border:none;
+}
+.accordion_headings1 input.checkbx,.accordion_headings input.checkbx
+{
+	margin-right:5px;
+	cursor:pointer;
+}
+.mandatory
+{
+	border-left:2px solid #f00;
+	#border-left:0;
+	filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=-2, OffY=0,color=#ff0000) progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=0,color=#809db2) progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=0,color=#809db2) progid:DXImageTransform.Microsoft.dropshadow(OffX=0, OffY=0,color=#809db2);
+}
+#basic-accordian input.mandatory,#basic-accordian textarea.mandatory,#basic-accordian select.mandatory,#basic-accordian input,#basic-accordian textarea,#basic-accordian select
+{
+	width:100px;
+}
+a.linkbutton
+{
+	font-size:10px;
+	float:right;
+	margin-top:17px;
+	padding:0px 10px;
+}
+
+span.exportexcel .linkbutton
+{
+	margin:auto;
+	float:right;
+	font-weight:bold;
+	background:url(../Images/excel_icon.gif) no-repeat 0 0;
+	height:16px;
+	padding:3px 0px 0px 20px;
+}

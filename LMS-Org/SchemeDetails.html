@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+
+                    <div class="leftmenu">
+                    	<ul>
+							<li>Masters
+								<ul>
+									<li><a href="ListAllSchemes.html">View Schemes</a></li>
+									<li><a href="CreateScheme.html">Add Schemes</a></li>
+								</ul>
+							</li>
+                        </ul>
+                    </div>
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#">SCHEMES</a><a href="#">Manage Schemes</a><a href="#">View Schemes</a>Scheme Details</p>
+                        <h1>Scheme Details</h1>
+                    	<p>
+                        	This page is for users to view scheme details online that is stored ino database for Loyalty programs.
+                        </p>
+                        <form id="form1" name="form1" method="post" action="">
+                        	<table class="dataTable">
+                            	<thead>
+                                	<tr>
+                                    	<th colspan="4" class="column1">Scheme Information</th>
+                                    </tr>
+                                </thead>
+                            	<tbody>
+                                	<tr>
+                                    	<th class="column1" width="150px">Scheme Name:</th>
+	                                    <td>BuyFly</td>
+                                        <th class="column1" width="150px">Scheme Category:</th>
+	                                    <td>Coupons</td>
+                                    </tr>
+                                    <tr class="odd">
+                                    	<th class="column1">Start Date:</th>
+                                        <td width="150px">15/01/2010</td>
+                                        <th class="column1">End Date:</th>
+                                        <td>14/06/2011</td>
+                                    </tr>
+                                    <tr>
+                                    	<th class="column1">Points:</th>
+                                        <td>6000</td>
+                                        <th class="column1">Status:</th>
+                                        <td>Closed</td>
+                                    </tr>
+									<tr class="odd">
+                                    	<th class="column1">Scheme Description:</th>
+                                      <td>Convert Points to AirTicket</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        	<table class="dataTable">
+									<thead>
+										<tr class="odd">
+											<th class="column1">Available Criteria</th>
+											<th class="column1">&nbsp;</th>
+											<th>Assigned Criteria</th>
+										</tr>
+									</thead>
+									<tr valign="middle" style="height:30px;">
+										<td>
+											<select size="4" name="LeftView" multiple="multiple" id="L1" style="color:Black;font-family:Trebuchet MS;font-size:11px;height:200px;width:270px;">
+											  <option value="0">CRIT112</option>
+											  <option value="1">CRIT113</option>
+											  <option value="2">CRIT114</option>
+											  <option value="3">CRIT115</option>
+											  <option value="4">CRIT116</option>
+											  <option value="5">CRIT117</option>
+											 </select>
+										</td>
+										<td align="center" valign="middle">
+										<input type="submit" name="A" value=">" id="A2"  style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:50px;" />
+										<br />
+										<input type="submit" name="B" value=">>" id="B2"  style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:50px;" />
+										<br />
+										<input type="submit" name="C" value="&lt;" id="C2" style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:50px;" />
+										<br />
+										<input type="submit" name="D" value="&lt;&lt;" id="D2"  style="color:Black;background-color:#F3BA65;font-family:Trebuchet MS;font-size:11px;font-weight:bold;width:50px;" /></td>
+										<td>
+											<select size="4" name="RightViw" multiple="multiple" id="R1" style="color:Black;font-family:Trebuchet MS;font-size:11px;height:200px;width:270px;">
+											  <option value="0">CRIT107</option>
+											  <option value="1">CRIT108</option>
+											  <option value="2">CRIT109</option>
+											</select>
+										</td>
+									</tr>
+							</table>
+
+							<input name="CreateNew" type="button" class="primarybuttons" onclick="cnfrmtn=confirm('Do you want to Edit this Scheme?');if(cnfrmtn){window.location='EditScheme.html';}" value="Edit" />
+                        	<input name="CreateNew" type="button" class="primarybuttons" onclick="MM_goToURL('parent','ListAllSchemes.html');return document.MM_returnValue" value="Cancel" />
+                    	</form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">CIGNA.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Privacy statement</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--Òíõs×Æ/ ¨É&Èá±qððNÁe:ü<ð%®ƒ1(é£²J,íqš§ô÷p·:±F²îÎªÅ¯^æYÏÃ^M!.X` ¿òåbF—?M?46³5]Aò¯ÅëJ3-šú'ñ¼Ì%ÝÂi-²ŠÕä
+OQ®’˜Öi$ÄçÀWYßò	
+”é¯ó*‹Æ@)æoCù@'‚n¶¦ÎÜüøœ&ÃäÉk7Eý·qrAk«aª+¬G×¥kšèÐ•ËÌ)”ÉÃvo‘LZ¨.òmšü†&×¡n¤Gìü¢nl aüúrï¦íøª/§ö]ÀÇÅ7då©sù)î¾¡ËÈ\Ò8³3 LYß¶þ7²2Ì{˜ß"‰1ì(º­75ìn~ñÎA	Ù;B¦Ï6R™1°Àúz8ùÑu©±h6Ã¾Ä Ø6Ø@9«·©å•éy‹BêîÍC…"_ç7‘S<I m­ß¢ÁwAÃÀ1³ êˆR)“øêˆêˆêˆ§UN©1tP¼ôˆ êˆ-->

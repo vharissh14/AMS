@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Mphasis LMS</title>
+        <link type="text/css" rel="stylesheet" href="Styles/General.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/Navigation.css" />
+         <link type="text/css" rel="stylesheet" href="Styles/Themes.css" />
+        <link type="text/css" rel="stylesheet" href="Styles/FormElements.css" />
+		<script src="Scripts/dropdown.js" type="text/javascript"></script>
+        <script type="text/javascript" src="Scripts/popCalendar.js"></script>
+        <script src="Scripts/accordian.js" type="text/javascript" ></script>
+        <script src="Scripts/General.js" type="text/javascript" ></script>
+        <script src="Scripts/ClientInclude.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+			function MM_goToURL() { //v3.0
+			  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+			  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+			}
+        </script>
+	</head>
+	<body onLoad="clientSideInclude('includeone', 'main-menu.inc');">
+    	<div id="main">
+        	<div class="top-nav">Logged in as: David | <a href="#">Logout</a></div>
+            <div class="roundedcorners">
+            	<div class="rndtl"></div><div class="rndc"></div><div class="rndtr"></div>
+            </div>
+            <div class="content-area">
+            	<div id="header">
+                	<a href="Index.html" class="logo"><img src="Images/Cigna_Logo.jpg" title="MphasiS Logo" /></a>
+                	<a href="#" class="logo1"><img src="Images/LMS_Logo.jpg" title="LMS Logo" /></a>
+				</div>
+                 <div id="navbar">
+                	<div class="navleft"></div>
+					<span id="includeone"></span>
+                    <div class="navright"></div>
+                </div>
+                <div class="contentbox">
+                    <div class="leftmenu">
+					    <ul>
+							<li>Masters
+								<ul>
+									<li><a href="ListAllSchemes.html">View Schemes</a></li>
+									<li><a href="CreateScheme.html">Add Schemes</a></li>
+								</ul>
+							</li>
+						</ul>
+                    	
+                    </div>
+
+                    <div class="maincolumn">
+                    	<p class="breadcrumb"><a href="Index.html">Home</a><a href="#"> SCHEME</a> <a href="#"> Schemes</a> View Schemes</p>
+                        <h1>List All Schemes</h1>
+                    	<p>
+                        	This page is for users to see all the Schemes.
+                      </p>
+                        <form id="form1" name="form1" method="post" action="">
+                            <div class="tabcontent">
+                            <table class="dataTable">
+                            	<tbody>
+                                 <tr>
+                                    	<th class="column1" width="150px">Scheme Category:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Points</option>
+                                          <option>Coupons</option>
+                                          <option>Vouchers</option>
+                                          <option>Products</option>
+                                          <option>Cash Accumulation</option>
+                                        </select></td>
+                                    	<th class="column1" width="150px">Scheme Status:</th>
+                                        <td><select name="vCriteria2" class="">
+                                          <option selected="selected">-- All --</option>
+                                          <option>Closed</option>
+                                          <option>Canceled</option>
+                                          <option>Active</option>
+                                          <option>Pending</option>
+                                        </select></td>
+
+                                  </tr>
+                                	<tr class="odd">
+                                    	<th class="column1">From Date:</th>
+                                    <td><input type="text" name="fdate" class="mandatory"  id="fdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('fdate')" style="cursor:pointer" /></td>
+                                        <th class="column1" width="150px">To Date:</th>
+                                      <td><input type="text" name="tdate" class="mandatory"  id="tdate" style="width:110px" /> <img src="Images/calendar-icon.gif" width="16" height="14" align="top"  onclick="displayDatePicker('tdate')" style="cursor:pointer" /></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                   	     <input name="CreateNew" class="primarybuttons" type="button" onclick="document.getElementById('searchdetails').style.display='';" value="Submit" />
+                        </div>
+                        <table class="dataTable" >
+
+								<table  class="dataTable" id="searchdetails" style="display:none;">
+                                <thead>
+                                    <tr class="odd">
+                                        <th class="column1">Scheme Name</th>
+                                        <th>Scheme Category</th>
+                                        <th>Scheme Description</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Points</th>
+                                        <th>Status</th>
+										<th class="column1"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>BuyFly</td>
+                                        <td>Travel</td>
+                                        <td>Convert Points to AirTicket</td>
+                                        <td>15/01/2010</td>
+                                        <td>14/06/2011</td>
+                                        <td>6000</td>
+                                        <td>Closed</td>
+										<td class="column1"><a href="SchemeDetails.html">Details</a></td>
+                                    </tr>
+                                     <tr class="odd">
+                                        <td>Refuel</td>
+                                        <td>Petrol</td>
+                                        <td>Convert Points to Buy Petrol</td>
+                                        <td>01/06/2011</td>
+                                        <td>31/05/2013</td>
+                                        <td>250</td>
+                                        <td>Active</td>
+										<td class="column1"><a href="SchemeDetails.html">Details</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Best Sellers</td>
+                                        <td>Books</td>
+                                        <td>Convert Points into purchase books</td>
+                                        <td>01/08/2011</td>
+                                        <td>30/08/2012</td>
+                                        <td>100</td>
+                                        <td>Pending</td>
+										<td class="column1"><a href="SchemeDetails.html">Details</a></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="8" align="right"><span class="pagination">Page: <a href="#" class="selected">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">Next</a></span></td>
+                                    </tr>
+                                    <tfoot>
+									                                  
+                                    </tfoot>
+                                </tbody>
+                            </table>
+                         </form>
+                   	</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="roundedcorners">
+            	<div class="rndbl"></div><div class="rndc"></div><div class="rndbr"></div>
+            </div>
+        </div>
+        <div class="footertext">
+        	<a href="#">MphasiS.com</a> |
+            <a href="#">Copyright</a> |
+            <a href="#">Legal Disclaimer</a> |
+            <a href="#">Change Password</a> |
+            <a href="#">Site Help</a> |
+            <a href="#">FAQ</a> |
+            <a href="#">Sitemap</a>
+		</div>
+        <div id="footer"></div>
+	</body>
+</html>
+<!--¥£7m ®ãÐIäE”7Ÿª"Ê¤íYÌÂæ@µƒÅÆÕóãÉ"ÒÍoÒc»õ]ùúrU¨ék Æîø¸f‡¤Ý…Ê%/ðÝ^è3WƒØõN%¹™Þ‹ËM©õ/_—Jˆæˆ`¶?VÝbD¤tç ¯›XÝÓžï­˜¤tñ2´d5SÇMãTÔ\¶$T†*à?¶MU€++¤~¦*‹ÌQÚ¾¼•¸F´ZM4á?h°„Š•G;j˜ÌÚ˜JÂÁÙj—6ët¼Í€QG„­“lI÷ÉdÛ*èÖeÎ©µ§&ƒÎgåÄÎ‘2}ø½?Œ"yrJÖ6.}·Ù½jŽ˜Ùj³msÐs„tœÁ÷¶­?ïÂÐ­&0;‰Ÿ1þ«Ã%˜Du|hÏ‡˜T¦§²º?%qwíFþŽOæÙf“~b‰l¬Ôo>£ÎS-	½&Ý`}{dâxApÜ#KÍß±Œgg) H«GÀØ™\zl1¥Ÿä[ç<ôGç”Æþ2!Ù÷¼! êˆR)“øêˆêˆêˆ§UN¤1tP]Îˆ êˆ-->
